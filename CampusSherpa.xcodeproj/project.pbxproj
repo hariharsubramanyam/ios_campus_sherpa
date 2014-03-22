@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7331989D18DE47CC001CBEED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7331989C18DE47CC001CBEED /* Foundation.framework */; };
+		7331989F18DE47CC001CBEED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7331989E18DE47CC001CBEED /* CoreGraphics.framework */; };
+		733198A118DE47CC001CBEED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733198A018DE47CC001CBEED /* UIKit.framework */; };
+		733198A718DE47CC001CBEED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 733198A518DE47CC001CBEED /* InfoPlist.strings */; };
+		733198A918DE47CC001CBEED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198A818DE47CC001CBEED /* main.m */; };
+		733198AD18DE47CC001CBEED /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198AC18DE47CC001CBEED /* CSAppDelegate.m */; };
+		733198B018DE47CC001CBEED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 733198AE18DE47CC001CBEED /* Main.storyboard */; };
+		733198B318DE47CC001CBEED /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198B218DE47CC001CBEED /* CSViewController.m */; };
+		733198B518DE47CC001CBEED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 733198B418DE47CC001CBEED /* Images.xcassets */; };
+		733198BC18DE47CC001CBEED /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733198BB18DE47CC001CBEED /* XCTest.framework */; };
+		733198BD18DE47CC001CBEED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7331989C18DE47CC001CBEED /* Foundation.framework */; };
+		733198BE18DE47CC001CBEED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733198A018DE47CC001CBEED /* UIKit.framework */; };
+		733198C618DE47CC001CBEED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 733198C418DE47CC001CBEED /* InfoPlist.strings */; };
+		733198C818DE47CC001CBEED /* CampusSherpaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198C718DE47CC001CBEED /* CampusSherpaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		733198BF18DE47CC001CBEED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7331989118DE47CC001CBEED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7331989818DE47CC001CBEED;
+			remoteInfo = CampusSherpa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7331989918DE47CC001CBEED /* CampusSherpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusSherpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7331989C18DE47CC001CBEED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7331989E18DE47CC001CBEED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		733198A018DE47CC001CBEED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		733198A418DE47CC001CBEED /* CampusSherpa-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CampusSherpa-Info.plist"; sourceTree = "<group>"; };
+		733198A618DE47CC001CBEED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		733198A818DE47CC001CBEED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		733198AA18DE47CC001CBEED /* CampusSherpa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CampusSherpa-Prefix.pch"; sourceTree = "<group>"; };
+		733198AB18DE47CC001CBEED /* CSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAppDelegate.h; sourceTree = "<group>"; };
+		733198AC18DE47CC001CBEED /* CSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAppDelegate.m; sourceTree = "<group>"; };
+		733198AF18DE47CC001CBEED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		733198B118DE47CC001CBEED /* CSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSViewController.h; sourceTree = "<group>"; };
+		733198B218DE47CC001CBEED /* CSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
+		733198B418DE47CC001CBEED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		733198BA18DE47CC001CBEED /* CampusSherpaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampusSherpaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		733198BB18DE47CC001CBEED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		733198C318DE47CC001CBEED /* CampusSherpaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CampusSherpaTests-Info.plist"; sourceTree = "<group>"; };
+		733198C518DE47CC001CBEED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		733198C718DE47CC001CBEED /* CampusSherpaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusSherpaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7331989618DE47CC001CBEED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7331989F18DE47CC001CBEED /* CoreGraphics.framework in Frameworks */,
+				733198A118DE47CC001CBEED /* UIKit.framework in Frameworks */,
+				7331989D18DE47CC001CBEED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		733198B718DE47CC001CBEED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				733198BC18DE47CC001CBEED /* XCTest.framework in Frameworks */,
+				733198BE18DE47CC001CBEED /* UIKit.framework in Frameworks */,
+				733198BD18DE47CC001CBEED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7331989018DE47CC001CBEED = {
+			isa = PBXGroup;
+			children = (
+				733198A218DE47CC001CBEED /* CampusSherpa */,
+				733198C118DE47CC001CBEED /* CampusSherpaTests */,
+				7331989B18DE47CC001CBEED /* Frameworks */,
+				7331989A18DE47CC001CBEED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7331989A18DE47CC001CBEED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7331989918DE47CC001CBEED /* CampusSherpa.app */,
+				733198BA18DE47CC001CBEED /* CampusSherpaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7331989B18DE47CC001CBEED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7331989C18DE47CC001CBEED /* Foundation.framework */,
+				7331989E18DE47CC001CBEED /* CoreGraphics.framework */,
+				733198A018DE47CC001CBEED /* UIKit.framework */,
+				733198BB18DE47CC001CBEED /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		733198A218DE47CC001CBEED /* CampusSherpa */ = {
+			isa = PBXGroup;
+			children = (
+				733198AB18DE47CC001CBEED /* CSAppDelegate.h */,
+				733198AC18DE47CC001CBEED /* CSAppDelegate.m */,
+				733198AE18DE47CC001CBEED /* Main.storyboard */,
+				733198B118DE47CC001CBEED /* CSViewController.h */,
+				733198B218DE47CC001CBEED /* CSViewController.m */,
+				733198B418DE47CC001CBEED /* Images.xcassets */,
+				733198A318DE47CC001CBEED /* Supporting Files */,
+			);
+			path = CampusSherpa;
+			sourceTree = "<group>";
+		};
+		733198A318DE47CC001CBEED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				733198A418DE47CC001CBEED /* CampusSherpa-Info.plist */,
+				733198A518DE47CC001CBEED /* InfoPlist.strings */,
+				733198A818DE47CC001CBEED /* main.m */,
+				733198AA18DE47CC001CBEED /* CampusSherpa-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		733198C118DE47CC001CBEED /* CampusSherpaTests */ = {
+			isa = PBXGroup;
+			children = (
+				733198C718DE47CC001CBEED /* CampusSherpaTests.m */,
+				733198C218DE47CC001CBEED /* Supporting Files */,
+			);
+			path = CampusSherpaTests;
+			sourceTree = "<group>";
+		};
+		733198C218DE47CC001CBEED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				733198C318DE47CC001CBEED /* CampusSherpaTests-Info.plist */,
+				733198C418DE47CC001CBEED /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7331989818DE47CC001CBEED /* CampusSherpa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 733198CB18DE47CC001CBEED /* Build configuration list for PBXNativeTarget "CampusSherpa" */;
+			buildPhases = (
+				7331989518DE47CC001CBEED /* Sources */,
+				7331989618DE47CC001CBEED /* Frameworks */,
+				7331989718DE47CC001CBEED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CampusSherpa;
+			productName = CampusSherpa;
+			productReference = 7331989918DE47CC001CBEED /* CampusSherpa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		733198B918DE47CC001CBEED /* CampusSherpaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 733198CE18DE47CC001CBEED /* Build configuration list for PBXNativeTarget "CampusSherpaTests" */;
+			buildPhases = (
+				733198B618DE47CC001CBEED /* Sources */,
+				733198B718DE47CC001CBEED /* Frameworks */,
+				733198B818DE47CC001CBEED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				733198C018DE47CC001CBEED /* PBXTargetDependency */,
+			);
+			name = CampusSherpaTests;
+			productName = CampusSherpaTests;
+			productReference = 733198BA18DE47CC001CBEED /* CampusSherpaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7331989118DE47CC001CBEED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Campus Sherpa";
+				TargetAttributes = {
+					733198B918DE47CC001CBEED = {
+						TestTargetID = 7331989818DE47CC001CBEED;
+					};
+				};
+			};
+			buildConfigurationList = 7331989418DE47CC001CBEED /* Build configuration list for PBXProject "CampusSherpa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7331989018DE47CC001CBEED;
+			productRefGroup = 7331989A18DE47CC001CBEED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7331989818DE47CC001CBEED /* CampusSherpa */,
+				733198B918DE47CC001CBEED /* CampusSherpaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7331989718DE47CC001CBEED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				733198B518DE47CC001CBEED /* Images.xcassets in Resources */,
+				733198A718DE47CC001CBEED /* InfoPlist.strings in Resources */,
+				733198B018DE47CC001CBEED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		733198B818DE47CC001CBEED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				733198C618DE47CC001CBEED /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7331989518DE47CC001CBEED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				733198AD18DE47CC001CBEED /* CSAppDelegate.m in Sources */,
+				733198A918DE47CC001CBEED /* main.m in Sources */,
+				733198B318DE47CC001CBEED /* CSViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		733198B618DE47CC001CBEED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				733198C818DE47CC001CBEED /* CampusSherpaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		733198C018DE47CC001CBEED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7331989818DE47CC001CBEED /* CampusSherpa */;
+			targetProxy = 733198BF18DE47CC001CBEED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		733198A518DE47CC001CBEED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				733198A618DE47CC001CBEED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		733198AE18DE47CC001CBEED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				733198AF18DE47CC001CBEED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		733198C418DE47CC001CBEED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				733198C518DE47CC001CBEED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		733198C918DE47CC001CBEED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		733198CA18DE47CC001CBEED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		733198CC18DE47CC001CBEED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampusSherpa/CampusSherpa-Prefix.pch";
+				INFOPLIST_FILE = "CampusSherpa/CampusSherpa-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		733198CD18DE47CC001CBEED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampusSherpa/CampusSherpa-Prefix.pch";
+				INFOPLIST_FILE = "CampusSherpa/CampusSherpa-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		733198CF18DE47CC001CBEED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CampusSherpa.app/CampusSherpa";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampusSherpa/CampusSherpa-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CampusSherpaTests/CampusSherpaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		733198D018DE47CC001CBEED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CampusSherpa.app/CampusSherpa";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampusSherpa/CampusSherpa-Prefix.pch";
+				INFOPLIST_FILE = "CampusSherpaTests/CampusSherpaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7331989418DE47CC001CBEED /* Build configuration list for PBXProject "CampusSherpa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				733198C918DE47CC001CBEED /* Debug */,
+				733198CA18DE47CC001CBEED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		733198CB18DE47CC001CBEED /* Build configuration list for PBXNativeTarget "CampusSherpa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				733198CC18DE47CC001CBEED /* Debug */,
+				733198CD18DE47CC001CBEED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		733198CE18DE47CC001CBEED /* Build configuration list for PBXNativeTarget "CampusSherpaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				733198CF18DE47CC001CBEED /* Debug */,
+				733198D018DE47CC001CBEED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7331989118DE47CC001CBEED /* Project object */;
+}
