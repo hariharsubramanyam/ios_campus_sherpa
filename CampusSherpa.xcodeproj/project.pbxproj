@@ -25,6 +25,7 @@
 		733198D918DE4A4C001CBEED /* CSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198D818DE4A4C001CBEED /* CSUser.m */; };
 		733198DC18DE4A58001CBEED /* CSTourLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198DB18DE4A58001CBEED /* CSTourLocation.m */; };
 		733198DF18DE4A67001CBEED /* CSTourMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198DE18DE4A67001CBEED /* CSTourMedia.m */; };
+		7343BDF118E20EFE006321FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7343BDF018E20EFE006321FD /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		733198DB18DE4A58001CBEED /* CSTourLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSTourLocation.m; path = Models/CSTourLocation.m; sourceTree = "<group>"; };
 		733198DD18DE4A67001CBEED /* CSTourMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSTourMedia.h; path = Models/CSTourMedia.h; sourceTree = "<group>"; };
 		733198DE18DE4A67001CBEED /* CSTourMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSTourMedia.m; path = Models/CSTourMedia.m; sourceTree = "<group>"; };
+		7343BDF018E20EFE006321FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7343BDF118E20EFE006321FD /* MapKit.framework in Frameworks */,
 				7331989F18DE47CC001CBEED /* CoreGraphics.framework in Frameworks */,
 				733198A118DE47CC001CBEED /* UIKit.framework in Frameworks */,
 				7331989D18DE47CC001CBEED /* Foundation.framework in Frameworks */,
@@ -113,6 +116,7 @@
 		7331989B18DE47CC001CBEED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7343BDF018E20EFE006321FD /* MapKit.framework */,
 				7331989C18DE47CC001CBEED /* Foundation.framework */,
 				7331989E18DE47CC001CBEED /* CoreGraphics.framework */,
 				733198A018DE47CC001CBEED /* UIKit.framework */,
@@ -489,6 +493,7 @@
 				733198CD18DE47CC001CBEED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		733198CE18DE47CC001CBEED /* Build configuration list for PBXNativeTarget "CampusSherpaTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +502,7 @@
 				733198D018DE47CC001CBEED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
