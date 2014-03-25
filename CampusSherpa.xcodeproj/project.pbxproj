@@ -21,6 +21,10 @@
 		733198BE18DE47CC001CBEED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733198A018DE47CC001CBEED /* UIKit.framework */; };
 		733198C618DE47CC001CBEED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 733198C418DE47CC001CBEED /* InfoPlist.strings */; };
 		733198C818DE47CC001CBEED /* CampusSherpaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198C718DE47CC001CBEED /* CampusSherpaTests.m */; };
+		733198D618DE49AF001CBEED /* CSTour.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198D518DE49AF001CBEED /* CSTour.m */; };
+		733198D918DE4A4C001CBEED /* CSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198D818DE4A4C001CBEED /* CSUser.m */; };
+		733198DC18DE4A58001CBEED /* CSTourLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198DB18DE4A58001CBEED /* CSTourLocation.m */; };
+		733198DF18DE4A67001CBEED /* CSTourMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198DE18DE4A67001CBEED /* CSTourMedia.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,14 @@
 		733198C318DE47CC001CBEED /* CampusSherpaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CampusSherpaTests-Info.plist"; sourceTree = "<group>"; };
 		733198C518DE47CC001CBEED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		733198C718DE47CC001CBEED /* CampusSherpaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusSherpaTests.m; sourceTree = "<group>"; };
+		733198D418DE49AF001CBEED /* CSTour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSTour.h; path = Models/CSTour.h; sourceTree = "<group>"; };
+		733198D518DE49AF001CBEED /* CSTour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSTour.m; path = Models/CSTour.m; sourceTree = "<group>"; };
+		733198D718DE4A4C001CBEED /* CSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSUser.h; path = Models/CSUser.h; sourceTree = "<group>"; };
+		733198D818DE4A4C001CBEED /* CSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSUser.m; path = Models/CSUser.m; sourceTree = "<group>"; };
+		733198DA18DE4A58001CBEED /* CSTourLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSTourLocation.h; path = Models/CSTourLocation.h; sourceTree = "<group>"; };
+		733198DB18DE4A58001CBEED /* CSTourLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSTourLocation.m; path = Models/CSTourLocation.m; sourceTree = "<group>"; };
+		733198DD18DE4A67001CBEED /* CSTourMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSTourMedia.h; path = Models/CSTourMedia.h; sourceTree = "<group>"; };
+		733198DE18DE4A67001CBEED /* CSTourMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSTourMedia.m; path = Models/CSTourMedia.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,7 @@
 		733198A218DE47CC001CBEED /* CampusSherpa */ = {
 			isa = PBXGroup;
 			children = (
+				733198D318DE4963001CBEED /* Models */,
 				733198AB18DE47CC001CBEED /* CSAppDelegate.h */,
 				733198AC18DE47CC001CBEED /* CSAppDelegate.m */,
 				733198AE18DE47CC001CBEED /* Main.storyboard */,
@@ -150,6 +163,21 @@
 				733198C418DE47CC001CBEED /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		733198D318DE4963001CBEED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				733198D418DE49AF001CBEED /* CSTour.h */,
+				733198D518DE49AF001CBEED /* CSTour.m */,
+				733198D718DE4A4C001CBEED /* CSUser.h */,
+				733198D818DE4A4C001CBEED /* CSUser.m */,
+				733198DA18DE4A58001CBEED /* CSTourLocation.h */,
+				733198DB18DE4A58001CBEED /* CSTourLocation.m */,
+				733198DD18DE4A67001CBEED /* CSTourMedia.h */,
+				733198DE18DE4A67001CBEED /* CSTourMedia.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +279,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				733198AD18DE47CC001CBEED /* CSAppDelegate.m in Sources */,
+				733198DF18DE4A67001CBEED /* CSTourMedia.m in Sources */,
 				733198A918DE47CC001CBEED /* main.m in Sources */,
+				733198DC18DE4A58001CBEED /* CSTourLocation.m in Sources */,
 				733198B318DE47CC001CBEED /* CSViewController.m in Sources */,
+				733198D618DE49AF001CBEED /* CSTour.m in Sources */,
+				733198D918DE4A4C001CBEED /* CSUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
