@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E70BA023-8BB8-454B-83CC-B3492BEEC369</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CampusSherpa</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FD8365A9-C9F3-4C60-B793-C56901981321</key>
+		<string>https://github.com/hariharsubramanyam/ios_campus_sherpa.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CampusSherpa.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FD8365A9-C9F3-4C60-B793-C56901981321</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hariharsubramanyam/ios_campus_sherpa.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FD8365A9-C9F3-4C60-B793-C56901981321</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FD8365A9-C9F3-4C60-B793-C56901981321</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CampusSherpa</string>
+		</dict>
+	</array>
+</dict>
+</plist>
