@@ -35,11 +35,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.tableView registerClass:[UITableViewCell class]
+             forCellReuseIdentifier:@"reuseIdentifier"];
+    self.tableView.dataSource = self;
+    /* Make sure our table view resizes correctly */
+    self.tableView.autoresizingMask =
+    UIViewAutoresizingFlexibleWidth |
+    UIViewAutoresizingFlexibleHeight;
     PFQuery *query = [PFQuery queryWithClassName:@"Tour"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.tours = [[NSMutableArray alloc] initWithArray:objects];
             NSLog(@"Size is %d", [self.tours count]);
+            [self.tableView reloadData];
         });
     }];
     
@@ -73,12 +81,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    cell.textLabel.text = @"Item";
-    cell.detailTextLabel.text = @"Detail";
-    cell.imageView.image = [UIImage imageNamed:@"PinImage"];
-    NSLog(@"%d", [self.tours count]);
+
+    NSLog(@"%d", indexPath.item);
+        // Configure the cell...
+    PFObject *parseObject = (PFObject *)[self.tours objectAtIndex:indexPath.item];
+    cell.textLabel.text = [parseObject objectForKeyedSubscript:@"name"];
+    cell.detailTextLabel.text = [parseObject objectForKeyedSubscript:@"description"];
+    PFFile *imageFile = (PFFile *)[parseObject objectForKeyedSubscript:@"thumbnail"];
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [cell.imageView setImage:[[UIImage alloc] initWithData:data]];
+            });
+        }
+    }];
+
     
     return cell;
 }
