@@ -35,9 +35,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class]
-             forCellReuseIdentifier:@"reuseIdentifier"];
-    self.tableView.dataSource = self;
     /* Make sure our table view resizes correctly */
     self.tableView.autoresizingMask =
     UIViewAutoresizingFlexibleWidth |
@@ -80,21 +77,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AvailableTourPrototype" forIndexPath:indexPath];
 
     NSLog(@"%d", indexPath.item);
         // Configure the cell...
-    PFObject *parseObject = (PFObject *)[self.tours objectAtIndex:indexPath.item];
+    PFObject *parseObject = [self.tours objectAtIndex:indexPath.item];
     cell.textLabel.text = [parseObject objectForKeyedSubscript:@"name"];
     cell.detailTextLabel.text = [parseObject objectForKeyedSubscript:@"description"];
-    PFFile *imageFile = (PFFile *)[parseObject objectForKeyedSubscript:@"thumbnail"];
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [cell.imageView setImage:[[UIImage alloc] initWithData:data]];
-            });
-        }
-    }];
+    if (!cell.imageView.image) {
+        PFFile *imageFile = [parseObject objectForKeyedSubscript:@"thumbnail"];
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [cell.imageView setImage:[[UIImage alloc] initWithData:data]];
+                    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                });
+            }
+        }];
+    }
 
     
     return cell;

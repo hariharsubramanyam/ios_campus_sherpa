@@ -27,7 +27,6 @@
 		733198DF18DE4A67001CBEED /* CSTourMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198DE18DE4A67001CBEED /* CSTourMedia.m */; };
 		7343BDF118E20EFE006321FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7343BDF018E20EFE006321FD /* MapKit.framework */; };
 		73F5197018E30DB8003A947B /* CSAvailableToursController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5196F18E30DB8003A947B /* CSAvailableToursController.m */; };
-		8A7E611318E29F5500CA3A66 /* TourListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E611218E29F5500CA3A66 /* TourListTableViewController.m */; };
 		8A7E611518E2A09600CA3A66 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7E611418E2A09600CA3A66 /* Parse.framework */; };
 		8A7E611718E2A1B400CA3A66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7E611618E2A1B400CA3A66 /* AudioToolbox.framework */; };
 		8A7E611918E2A1C100CA3A66 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7E611818E2A1C100CA3A66 /* CFNetwork.framework */; };
@@ -81,8 +80,6 @@
 		7343BDF018E20EFE006321FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		73F5196E18E30DB8003A947B /* CSAvailableToursController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAvailableToursController.h; sourceTree = "<group>"; };
 		73F5196F18E30DB8003A947B /* CSAvailableToursController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAvailableToursController.m; sourceTree = "<group>"; };
-		8A7E611118E29F5500CA3A66 /* TourListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourListTableViewController.h; sourceTree = "<group>"; };
-		8A7E611218E29F5500CA3A66 /* TourListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourListTableViewController.m; sourceTree = "<group>"; };
 		8A7E611418E2A09600CA3A66 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8A7E611618E2A1B400CA3A66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8A7E611818E2A1C100CA3A66 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -232,8 +229,6 @@
 		73F5196D18E30D66003A947B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8A7E611118E29F5500CA3A66 /* TourListTableViewController.h */,
-				8A7E611218E29F5500CA3A66 /* TourListTableViewController.m */,
 				733198B118DE47CC001CBEED /* CSViewController.h */,
 				733198B218DE47CC001CBEED /* CSViewController.m */,
 				73F5196E18E30DB8003A947B /* CSAvailableToursController.h */,
@@ -346,7 +341,6 @@
 				733198A918DE47CC001CBEED /* main.m in Sources */,
 				733198DC18DE4A58001CBEED /* CSTourLocation.m in Sources */,
 				733198B318DE47CC001CBEED /* CSViewController.m in Sources */,
-				8A7E611318E29F5500CA3A66 /* TourListTableViewController.m in Sources */,
 				733198D618DE49AF001CBEED /* CSTour.m in Sources */,
 				733198D918DE4A4C001CBEED /* CSUser.m in Sources */,
 			);
