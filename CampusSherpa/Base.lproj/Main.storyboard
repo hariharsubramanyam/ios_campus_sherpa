@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="748" y="-491"/>
         </scene>
-        <!--Tour Preview Controller - Tour-->
+        <!--Start Tour View Controller - Tour-->
         <scene sceneID="uXZ-BB-r9W">
             <objects>
-                <viewController id="1Se-Nl-46I" customClass="CSTourPreviewController" sceneMemberID="viewController">
+                <viewController id="1Se-Nl-46I" customClass="CSStartTourViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iTO-p0-Riy"/>
                         <viewControllerLayoutGuide type="bottom" id="UYv-KR-Bli"/>
@@ -208,7 +208,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tour" id="Ih6-JE-ONb"/>
                     <connections>
-                        <outlet property="myMap" destination="aKy-za-dFG" id="Jbs-zX-aZM"/>
+                        <outlet property="mapView" destination="aKy-za-dFG" id="NFs-UJ-P9M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1I-67-qzO" userLabel="First Responder" sceneMemberID="firstResponder"/>

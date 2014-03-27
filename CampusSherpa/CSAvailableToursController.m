@@ -9,6 +9,7 @@
 #import "CSAvailableToursController.h"
 #import <Parse/Parse.h>
 #import "CSAppDelegate.h"
+#import "CSStartTourViewController.h"
 
 @interface CSAvailableToursController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -102,7 +103,6 @@
     self.appDelegate.currentTourID = selectedTour.objectId;
 }
 
-
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -139,15 +139,17 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    CSStartTourViewController *c = [segue destinationViewController];
+    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+    NSLog(@"%d", path.item);
+    c.selectedTour = [self.tours objectAtIndex:path.item];
+    NSLog(@"%@", c.selectedTour);
 }
-*/
 
 @end

@@ -38,6 +38,7 @@
 		8A7E612318E2A23000CA3A66 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7E612218E2A23000CA3A66 /* Security.framework */; };
 		8A7E612518E2A23A00CA3A66 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7E612418E2A23A00CA3A66 /* StoreKit.framework */; };
 		8A7E612718E2A24E00CA3A66 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7E612618E2A24E00CA3A66 /* SystemConfiguration.framework */; };
+		8A7E612A18E363DA00CA3A66 /* CSStartTourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E612918E363DA00CA3A66 /* CSStartTourViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		8A7E612218E2A23000CA3A66 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8A7E612418E2A23A00CA3A66 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8A7E612618E2A24E00CA3A66 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8A7E612818E363DA00CA3A66 /* CSStartTourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSStartTourViewController.h; sourceTree = "<group>"; };
+		8A7E612918E363DA00CA3A66 /* CSStartTourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSStartTourViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,8 +239,8 @@
 				733198B218DE47CC001CBEED /* CSViewController.m */,
 				73F5196E18E30DB8003A947B /* CSAvailableToursController.h */,
 				73F5196F18E30DB8003A947B /* CSAvailableToursController.m */,
-				73A130A018E47C4C0017DBCD /* CSTourPreviewController.h */,
-				73A130A118E47C4C0017DBCD /* CSTourPreviewController.m */,
+				8A7E612818E363DA00CA3A66 /* CSStartTourViewController.h */,
+				8A7E612918E363DA00CA3A66 /* CSStartTourViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -348,7 +351,7 @@
 				733198B318DE47CC001CBEED /* CSViewController.m in Sources */,
 				733198D618DE49AF001CBEED /* CSTour.m in Sources */,
 				733198D918DE4A4C001CBEED /* CSUser.m in Sources */,
-				73A130A218E47C4C0017DBCD /* CSTourPreviewController.m in Sources */,
+				8A7E612A18E363DA00CA3A66 /* CSStartTourViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
