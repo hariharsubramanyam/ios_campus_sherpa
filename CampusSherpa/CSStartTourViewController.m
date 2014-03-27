@@ -9,10 +9,13 @@
 #import "CSStartTourViewController.h"
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
+#import "CSAppDelegate.h"
+#import "CSTour.h"
+#import "CSTourLocation.h"
 
 @interface CSStartTourViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) NSArray *tourLocations;
+@property (strong, nonatomic) CSAppDelegate *appDelegate;
 @end
 
 @implementation CSStartTourViewController
@@ -31,18 +34,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@", self.selectedTour[@"objectId"]);
+    
+    self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication] delegate]);
+    
     PFQuery *query = [PFQuery queryWithClassName:@"TourLocation"];
-    [query whereKey:@"tourID" equalTo:self.selectedTour[@"objectId"]];
+    [query whereKey:@"tourID" equalTo:self.appDelegate.selectedTour.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            self.tourLocations = objects;
             dispatch_async(dispatch_get_main_queue(), ^{
-                PFObject *first = self.tourLocations[0];
-                PFGeoPoint *location = first[@"location"];
-                CLLocationCoordinate2D mapCenter = {location.latitude, location.longitude};
-                MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(mapCenter, METERS_PER_MILE, METERS_PER_MILE);
-                [self.mapView setRegion:viewRegion animated:NO];
+                self.appDelegate.selectedTour.tourLocations = [[NSMutableArray alloc] init];
+                for (PFObject *object in objects) {
+                    PFGeoPoint *geopoint = object[@"location"];
+                    CLLocation *location = [[CLLocation alloc] initWithLatitude:geopoint.latitude longitude:geopoint.longitude];
+                    CSTourLocation *tourLocation = [[CSTourLocation alloc] initWithID:object.objectId name:object[@"name"] description:object[@"description"] location:location mediaIDs:object[@"mediaIDs"] tourID:object[@"tourID"] thumbnailParseFile:object[@"thumbnail"]];
+                    [self.appDelegate.selectedTour.tourLocations addObject:tourLocation];
+                    CLLocationCoordinate2D mapCenter = {location.coordinate.latitude, location.coordinate.longitude};
+                    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(mapCenter, METERS_PER_MILE, METERS_PER_MILE);
+                    [self.mapView setRegion:viewRegion];
+                    MKPointAnnotation *ant = [[MKPointAnnotation alloc] init];
+                    ant.coordinate = location.coordinate;
+                    ant.title = [NSDateFormatter localizedStringFromDate:location.timestamp
+                                                               dateStyle:NSDateFormatterNoStyle
+                                                               timeStyle:NSDateFormatterMediumStyle];
+                    [self.mapView addAnnotation:ant];
+                }
             });
         } else {
             NSLog(@"Error loading tour locations %@ %@", error, [error userInfo]);
@@ -57,14 +72,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

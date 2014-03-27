@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <Parse/Parse.h>
 
 @interface CSTourLocation : NSObject
+@property (strong, nonatomic) NSString *objectId;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) CLLocation *location;
+@property (strong, nonatomic) NSMutableArray *mediaIDs;
+@property (strong, nonatomic) NSString *tourID;
+@property (strong, nonatomic) PFFile *thumbnailParseFile;
 
+- (instancetype) initWithID:(NSString *)objectId name:(NSString *)name description:(NSString *)description location:(CLLocation *)location mediaIDs:(NSMutableArray *)mediaIDs tourID:(NSString *)tourID thumbnailParseFile:(PFFile *)thumbnailParseFile;
 @end

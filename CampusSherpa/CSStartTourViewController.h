@@ -10,5 +10,4 @@
 #import <Parse/Parse.h>
 
 @interface CSStartTourViewController : UIViewController
-@property (nonatomic, strong) PFObject *selectedTour;
 @end

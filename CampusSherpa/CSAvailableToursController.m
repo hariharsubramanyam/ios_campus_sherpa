@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "CSAppDelegate.h"
 #import "CSStartTourViewController.h"
+#import "CSTour.h"
 
 @interface CSAvailableToursController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -42,8 +43,11 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Tour"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.appDelegate.tours = [[NSMutableArray alloc] initWithArray:objects];
-            NSLog(@"Size is %d", [self.appDelegate.tours count]);
+            self.appDelegate.tours = [[NSMutableArray alloc] init];
+            for (PFObject *pfobject in objects) {
+                CSTour *tour = [[CSTour alloc] initWithID:pfobject.objectId name:pfobject[@"name"] description:pfobject[@"description"] duration:[((NSNumber *)pfobject[@"duration"]) doubleValue] tourLocationIDs:pfobject[@"tourLocationIDs"] thumbnailParseFile:pfobject[@"thumbnail"]];
+                [self.appDelegate.tours addObject:tour];
+            }
             [self.tableView reloadData];
         });
     }];
@@ -79,11 +83,11 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AvailableTourPrototype" forIndexPath:indexPath];
         // Configure the cell...
-    PFObject *parseObject = [self.appDelegate.tours objectAtIndex:indexPath.item];
-    cell.textLabel.text = [parseObject objectForKeyedSubscript:@"name"];
-    cell.detailTextLabel.text = [parseObject objectForKeyedSubscript:@"description"];
+    CSTour *tour = self.appDelegate.tours[indexPath.item];
+    cell.textLabel.text = tour.name;
+    cell.detailTextLabel.text = tour.description;
     if (!cell.imageView.image) {
-        PFFile *imageFile = [parseObject objectForKeyedSubscript:@"thumbnail"];
+        PFFile *imageFile = tour.thumbnailParseFile;
         [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             if (!error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -99,8 +103,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    PFObject *selectedTour = [self.appDelegate.tours objectAtIndex:indexPath.row];
-    self.appDelegate.currentTourID = selectedTour.objectId;
+    self.appDelegate.selectedTour = self.appDelegate.tours[indexPath.row];
 }
 
 // Override to support conditional editing of the table view.
@@ -145,11 +148,6 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    CSStartTourViewController *c = [segue destinationViewController];
-    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-    NSLog(@"%d", path.item);
-    c.selectedTour = [self.tours objectAtIndex:path.item];
-    NSLog(@"%@", c.selectedTour);
 }
 
 @end

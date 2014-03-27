@@ -37,7 +37,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="1Se-Nl-46I" kind="push" id="YdD-eu-OTR"/>
+                                    <segue destination="1Se-Nl-46I" kind="push" identifier="startTourSegue" id="YdD-eu-OTR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
