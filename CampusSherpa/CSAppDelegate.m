@@ -17,6 +17,7 @@
                   clientKey:@"qUZYMXO7GqfhcIdnPaV3xmNdEKp1vbEYrA2GYzxO"];
     return YES;
 }
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

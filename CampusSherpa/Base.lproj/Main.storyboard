@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="k1d-Ml-X9U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="k1d-Ml-X9U">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="748" y="-491"/>
         </scene>
-        <!--View Controller - Tour-->
+        <!--Tour Preview Controller - Tour-->
         <scene sceneID="uXZ-BB-r9W">
             <objects>
-                <viewController id="1Se-Nl-46I" sceneMemberID="viewController">
+                <viewController id="1Se-Nl-46I" customClass="CSTourPreviewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iTO-p0-Riy"/>
                         <viewControllerLayoutGuide type="bottom" id="UYv-KR-Bli"/>
@@ -207,6 +207,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tour" id="Ih6-JE-ONb"/>
+                    <connections>
+                        <outlet property="myMap" destination="aKy-za-dFG" id="Jbs-zX-aZM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1I-67-qzO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

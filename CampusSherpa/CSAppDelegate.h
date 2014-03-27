@@ -12,4 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+
+@property (strong, nonatomic) NSMutableArray *tours;
+@property (strong, nonatomic) NSString *currentTourID;
+
 @end

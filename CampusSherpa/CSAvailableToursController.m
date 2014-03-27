@@ -8,20 +8,16 @@
 
 #import "CSAvailableToursController.h"
 #import <Parse/Parse.h>
+#import "CSAppDelegate.h"
 
 @interface CSAvailableToursController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *tours;
+
+// the app delegate stores global data
+@property (strong, nonatomic) CSAppDelegate *appDelegate;
 @end
 
 @implementation CSAvailableToursController
-
-- (NSMutableArray *)tours{
-    if (!_tours) {
-        _tours = [[NSMutableArray alloc] init];
-    }
-    return _tours;
-}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -39,11 +35,14 @@
     self.tableView.autoresizingMask =
     UIViewAutoresizingFlexibleWidth |
     UIViewAutoresizingFlexibleHeight;
+    
+    self.appDelegate = (CSAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Tour"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.tours = [[NSMutableArray alloc] initWithArray:objects];
-            NSLog(@"Size is %d", [self.tours count]);
+            self.appDelegate.tours = [[NSMutableArray alloc] initWithArray:objects];
+            NSLog(@"Size is %d", [self.appDelegate.tours count]);
             [self.tableView reloadData];
         });
     }];
@@ -72,16 +71,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.tours count];
+    return [self.appDelegate.tours count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AvailableTourPrototype" forIndexPath:indexPath];
-
-    NSLog(@"%d", indexPath.item);
         // Configure the cell...
-    PFObject *parseObject = [self.tours objectAtIndex:indexPath.item];
+    PFObject *parseObject = [self.appDelegate.tours objectAtIndex:indexPath.item];
     cell.textLabel.text = [parseObject objectForKeyedSubscript:@"name"];
     cell.detailTextLabel.text = [parseObject objectForKeyedSubscript:@"description"];
     if (!cell.imageView.image) {
@@ -98,6 +95,11 @@
 
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    PFObject *selectedTour = [self.appDelegate.tours objectAtIndex:indexPath.row];
+    self.appDelegate.currentTourID = selectedTour.objectId;
 }
 
 
