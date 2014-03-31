@@ -53,9 +53,7 @@
                     [self.mapView setRegion:viewRegion];
                     MKPointAnnotation *ant = [[MKPointAnnotation alloc] init];
                     ant.coordinate = location.coordinate;
-                    ant.title = [NSDateFormatter localizedStringFromDate:location.timestamp
-                                                               dateStyle:NSDateFormatterNoStyle
-                                                               timeStyle:NSDateFormatterMediumStyle];
+                    ant.title = tourLocation.name;
                     [self.mapView addAnnotation:ant];
                 }
             });
