@@ -189,7 +189,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aKy-za-dFG">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKy-za-dFG">
                                 <rect key="frame" x="0.0" y="62" width="320" height="280"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
@@ -200,6 +200,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onStartTourClick:" destination="1Se-Nl-46I" eventType="touchUpInside" id="BC2-Ko-pKO"/>
                                     <segue destination="ZXE-Hh-GJS" kind="push" id="BtY-jZ-u1n"/>
                                 </connections>
                             </button>
@@ -215,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="748" y="596"/>
         </scene>
-        <!--View Controller - Location Name-->
+        <!--Tour Location View Controller - Location Name-->
         <scene sceneID="Jj6-9G-LJc">
             <objects>
-                <viewController id="ZXE-Hh-GJS" sceneMemberID="viewController">
+                <viewController id="ZXE-Hh-GJS" customClass="CSTourLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IQn-my-47w"/>
                         <viewControllerLayoutGuide type="bottom" id="kez-ft-bHR"/>
@@ -233,6 +234,9 @@
                                 <state key="normal" title="Previous Location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onPreviousLocationClick:" destination="ZXE-Hh-GJS" eventType="touchUpInside" id="jGr-mK-kzH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1Q-ul-enK">
                                 <rect key="frame" x="204" y="518" width="96" height="30"/>
@@ -240,6 +244,9 @@
                                 <state key="normal" title="Next Location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onNextLocationClick:" destination="ZXE-Hh-GJS" eventType="touchUpInside" id="T59-L4-3BB"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PinImage" translatesAutoresizingMaskIntoConstraints="NO" id="psY-x5-a62">
                                 <rect key="frame" x="40" y="80" width="240" height="225"/>
@@ -260,6 +267,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onSeeMediaClick:" destination="ZXE-Hh-GJS" eventType="touchUpInside" id="fx2-mm-JxF"/>
                                     <segue destination="2B1-wI-RBO" kind="push" id="XAO-oS-Wio"/>
                                 </connections>
                             </button>
@@ -267,6 +275,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Location Name" id="jqK-w5-y8B"/>
+                    <connections>
+                        <outlet property="btnNextLocation" destination="c1Q-ul-enK" id="LJK-HK-2mN"/>
+                        <outlet property="btnPreviousLocation" destination="nmJ-5W-xal" id="xX6-Y6-l79"/>
+                        <outlet property="btnSeeMedia" destination="xwF-wj-e5M" id="LVp-VU-x5u"/>
+                        <outlet property="imgLocation" destination="psY-x5-a62" id="v2T-h8-SFX"/>
+                        <outlet property="txtDescription" destination="KE9-4g-e2s" id="AIj-Vk-DBQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbw-W4-PPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

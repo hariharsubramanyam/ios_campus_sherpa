@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CSTour.h"
+#import "CSTourLocation.h"
 
 @interface CSAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -15,6 +16,7 @@
 
 
 @property (strong, nonatomic) CSTour *selectedTour;
+@property (strong, nonatomic) CSTourLocation *selectedTourLocation;
 @property (strong, nonatomic) NSMutableArray *tours;
 
 @end

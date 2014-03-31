@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSMutableArray *mediaIDs;
 @property (strong, nonatomic) NSString *tourID;
 @property (strong, nonatomic) PFFile *thumbnailParseFile;
+@property (strong, nonatomic) NSData *thumbnail;
 
 - (instancetype) initWithID:(NSString *)objectId name:(NSString *)name description:(NSString *)description location:(CLLocation *)location mediaIDs:(NSMutableArray *)mediaIDs tourID:(NSString *)tourID thumbnailParseFile:(PFFile *)thumbnailParseFile;
 @end

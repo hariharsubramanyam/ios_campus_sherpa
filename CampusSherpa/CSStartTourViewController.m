@@ -30,6 +30,9 @@
     }
     return self;
 }
+- (IBAction)onStartTourClick:(id)sender {
+    self.appDelegate.selectedTourLocation = self.appDelegate.selectedTour.tourLocations[0];
+}
 
 - (void)viewDidLoad
 {
