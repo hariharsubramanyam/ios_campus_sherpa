@@ -70,6 +70,12 @@
 - (void) updateUI{
     self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication]delegate]);
     self.txtDescription.text = self.appDelegate.selectedTourLocation.description;
+    for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
+        if (self.appDelegate.selectedTourLocation == self.appDelegate.selectedTour.tourLocations[i]) {
+            self.title = [NSString stringWithFormat:@"Location %d of %d", (i+1), [self.appDelegate.selectedTour.tourLocations count]];
+            break;
+        }
+    }
     PFFile *imageFile = self.appDelegate.selectedTourLocation.thumbnailParseFile;
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
