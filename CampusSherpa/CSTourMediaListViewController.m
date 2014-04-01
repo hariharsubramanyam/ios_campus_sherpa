@@ -8,6 +8,8 @@
 
 #import "CSTourMediaListViewController.h"
 #import "CSAppDelegate.h"
+#import "CSTourMedia.h"
+#import <Parse/Parse.h>
 
 @interface CSTourMediaListViewController ()
 @property (strong, nonatomic) CSAppDelegate *appDelegate;
@@ -67,7 +69,21 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TourMediaIdentifier" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = @"Item";
+    CSTourMedia *tourMedia = self.appDelegate.selectedTourLocation.media[indexPath.row];
+    cell.textLabel.text = tourMedia.name;
+    cell.detailTextLabel.text = tourMedia.description;
+
+    PFFile *imageFile = tourMedia.imageParseFile;
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [cell.imageView setImage:[[UIImage alloc] initWithData:data]];
+                [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            });
+        }
+    }];
+
+
     return cell;
 }
 

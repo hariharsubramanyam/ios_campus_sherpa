@@ -88,7 +88,6 @@
                     [self.appDelegate.selectedTourLocation.mediaIDs addObject:object.objectId];
                     CSTourMedia *tourMedia = [[CSTourMedia alloc] initWithName:object[@"name"] description:object[@"description"] imageParseFile:object[@"image"]];
                     [self.appDelegate.selectedTourLocation.media addObject:tourMedia];
-                    NSLog(@"%@",tourMedia.name);
                 }
             });
         }
