@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *txtDescription;
 @property (weak, nonatomic) IBOutlet UIButton *btnSeeMedia;
 @property (weak, nonatomic) IBOutlet UIImageView *imgLocation;
+@property (weak, nonatomic) IBOutlet UILabel *lblLocationName;
 
 @property (strong, nonatomic) CSAppDelegate *appDelegate;
 @end
@@ -70,6 +71,7 @@
 - (void) updateUI{
     self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication]delegate]);
     self.txtDescription.text = self.appDelegate.selectedTourLocation.description;
+    self.lblLocationName.text = self.appDelegate.selectedTourLocation.name;
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
         if (self.appDelegate.selectedTourLocation == self.appDelegate.selectedTour.tourLocations[i]) {
             self.title = [NSString stringWithFormat:@"Location %d of %d", (i+1), [self.appDelegate.selectedTour.tourLocations count]];

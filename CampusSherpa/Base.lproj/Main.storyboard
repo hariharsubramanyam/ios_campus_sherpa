@@ -216,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="748" y="596"/>
         </scene>
-        <!--Tour Location View Controller - Location Name-->
+        <!--Tour Location View Controller - Location Info-->
         <scene sceneID="Jj6-9G-LJc">
             <objects>
                 <viewController id="ZXE-Hh-GJS" customClass="CSTourLocationViewController" sceneMemberID="viewController">
@@ -249,11 +249,11 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PinImage" translatesAutoresizingMaskIntoConstraints="NO" id="psY-x5-a62">
-                                <rect key="frame" x="40" y="80" width="240" height="225"/>
+                                <rect key="frame" x="40" y="106" width="240" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KE9-4g-e2s">
-                                <rect key="frame" x="40" y="313" width="240" height="133"/>
+                                <rect key="frame" x="40" y="339" width="240" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Isn't this a cool location? It has stuff like blah, blah, and blah! I especially like how it's a place (which means you can go to it). I like to come here sometimes (but not all the time). You should come here too!</string>
@@ -261,7 +261,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwF-wj-e5M">
-                                <rect key="frame" x="124" y="454" width="73" height="30"/>
+                                <rect key="frame" x="124" y="480" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="See Media">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -271,15 +271,27 @@
                                     <segue destination="2B1-wI-RBO" kind="push" id="XAO-oS-Wio"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tour Location Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gax-Y6-paa">
+                                <rect key="frame" x="83" y="77" width="155" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Gax-Y6-paa" secondAttribute="trailing" constant="82" id="Kfo-uK-x0T"/>
+                            <constraint firstItem="Gax-Y6-paa" firstAttribute="leading" secondItem="Z6S-zg-RIT" secondAttribute="leading" constant="83" id="l6M-a8-cqB"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Location Name" id="jqK-w5-y8B"/>
+                    <navigationItem key="navigationItem" title="Location Info" id="jqK-w5-y8B"/>
                     <connections>
                         <outlet property="btnNextLocation" destination="c1Q-ul-enK" id="LJK-HK-2mN"/>
                         <outlet property="btnPreviousLocation" destination="nmJ-5W-xal" id="xX6-Y6-l79"/>
                         <outlet property="btnSeeMedia" destination="xwF-wj-e5M" id="LVp-VU-x5u"/>
                         <outlet property="imgLocation" destination="psY-x5-a62" id="v2T-h8-SFX"/>
+                        <outlet property="lblLocationName" destination="Gax-Y6-paa" id="LpR-he-3hE"/>
                         <outlet property="txtDescription" destination="KE9-4g-e2s" id="AIj-Vk-DBQ"/>
                     </connections>
                 </viewController>
