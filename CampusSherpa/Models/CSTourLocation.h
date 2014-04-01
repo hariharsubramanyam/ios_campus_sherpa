@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) NSMutableArray *mediaIDs;
+@property (strong, nonatomic) NSMutableArray *media;
 @property (strong, nonatomic) NSString *tourID;
 @property (strong, nonatomic) PFFile *thumbnailParseFile;
 @property (strong, nonatomic) NSData *thumbnail;

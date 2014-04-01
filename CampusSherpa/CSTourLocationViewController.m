@@ -8,6 +8,7 @@
 
 #import "CSTourLocationViewController.h"
 #import "CSAppDelegate.h"
+#import "CSTourMedia.h"
 
 @interface CSTourLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnPreviousLocation;
@@ -33,6 +34,7 @@
                 self.appDelegate.selectedTourLocation = self.appDelegate.selectedTour.tourLocations[i-1];
             }
             [self updateUI];
+            [self makeQuery];
             return;
         }
     }
@@ -46,6 +48,7 @@
                 self.appDelegate.selectedTourLocation = self.appDelegate.selectedTour.tourLocations[i+1];
             }
             [self updateUI];
+            [self makeQuery];
             return;
         }
     }
@@ -62,14 +65,39 @@
 
 - (void)viewDidLoad
 {
+    self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication]delegate]);
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self updateUI];
+    [self makeQuery];
+    
+}
+
+- (void) makeQuery{
+    PFQuery *query = [PFQuery queryWithClassName:@"TourMedia"];
+    
+    [query whereKey:@"tourLocationID" equalTo:self.appDelegate.selectedTourLocation.objectId];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.appDelegate.selectedTourLocation.media = [[NSMutableArray alloc] init];
+                self.appDelegate.selectedTourLocation.mediaIDs = [[NSMutableArray alloc] init];
+                for (PFObject *object in objects) {
+                    [self.appDelegate.selectedTourLocation.mediaIDs addObject:object.objectId];
+                    CSTourMedia *tourMedia = [[CSTourMedia alloc] initWithName:object[@"name"] description:object[@"description"] imageParseFile:object[@"image"]];
+                    [self.appDelegate.selectedTourLocation.media addObject:tourMedia];
+                    NSLog(@"%@",tourMedia.name);
+                }
+            });
+        }
+    }];
+
     
 }
 
 - (void) updateUI{
-    self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication]delegate]);
     self.txtDescription.text = self.appDelegate.selectedTourLocation.description;
     self.lblLocationName.text = self.appDelegate.selectedTourLocation.name;
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
