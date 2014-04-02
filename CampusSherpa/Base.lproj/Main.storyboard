@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Available Tours Controller - Available Tours-->
+        <!--Available Tours Controller - Tours-->
         <scene sceneID="OJo-Ue-z4z">
             <objects>
                 <tableViewController id="dYN-Zj-woU" customClass="CSAvailableToursController" sceneMemberID="viewController">
@@ -14,7 +14,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AvailableTourPrototype" textLabel="ErQ-7c-dnO" detailTextLabel="CwR-JY-wkZ" style="IBUITableViewCellStyleSubtitle" id="i96-jT-ZIb">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="116" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i96-jT-ZIb" id="Ce9-rq-689">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -47,8 +47,8 @@
                             <outlet property="delegate" destination="dYN-Zj-woU" id="5ad-I7-vuC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Available Tours" id="wZQ-cc-hkh">
-                        <barButtonItem key="rightBarButtonItem" title="Make Tour" id="JnB-J0-qEk">
+                    <navigationItem key="navigationItem" title="Tours" id="wZQ-cc-hkh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JnB-J0-qEk">
                             <connections>
                                 <segue destination="quV-GE-13J" kind="push" id="h0t-OK-1CY"/>
                             </connections>

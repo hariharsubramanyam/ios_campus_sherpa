@@ -37,8 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication] delegate]);
+    self.view.backgroundColor = self.appDelegate.viewBackgroundColor;
     
     PFQuery *query = [PFQuery queryWithClassName:@"TourLocation"];
     [query whereKey:@"tourID" equalTo:self.appDelegate.selectedTour.objectId];

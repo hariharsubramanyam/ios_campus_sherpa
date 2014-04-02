@@ -21,4 +21,6 @@
 @property (strong, nonatomic) NSMutableArray *tours;
 @property (strong, nonatomic) CSTourMedia *selectedMedia;
 
+@property (strong, nonatomic) UIColor *viewBackgroundColor;
+
 @end
