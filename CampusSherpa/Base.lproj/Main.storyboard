@@ -531,6 +531,43 @@
             </objects>
             <point key="canvasLocation" x="-229" y="121"/>
         </scene>
+        <!--Tour Media Detail View Controller - Media Name-->
+        <scene sceneID="qIL-W4-uaG">
+            <objects>
+                <viewController id="8fW-Zu-oMC" customClass="CSTourMediaDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ekh-Qp-R5v"/>
+                        <viewControllerLayoutGuide type="bottom" id="cxb-OA-Xbj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lCr-mh-tRk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GA3-70-AkA">
+                                <rect key="frame" x="20" y="87" width="280" height="287"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cLa-0D-OCb">
+                                <rect key="frame" x="20" y="382" width="280" height="166"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Media Name" id="zam-QZ-tKP"/>
+                    <connections>
+                        <outlet property="imgMedia" destination="GA3-70-AkA" id="hAg-zL-5Db"/>
+                        <outlet property="txtDescription" destination="cLa-0D-OCb" id="CQk-Be-fYc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7L-hr-Cqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2006" y="596"/>
+        </scene>
         <!--Tour Media List View Controller - Media-->
         <scene sceneID="fK7-Xa-VyX">
             <objects>
@@ -540,11 +577,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TourMediaIdentifier" textLabel="Lcl-LD-Pps" detailTextLabel="H5K-cF-9uB" style="IBUITableViewCellStyleSubtitle" id="yTW-Fb-cIp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TourMediaIdentifier" textLabel="Lcl-LD-Pps" detailTextLabel="H5K-cF-9uB" style="IBUITableViewCellStyleSubtitle" id="yTW-Fb-cIp">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yTW-Fb-cIp" id="aEJ-S6-Ky7">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Stuff happened here!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lcl-LD-Pps">
@@ -563,6 +600,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="8fW-Zu-oMC" kind="push" id="N1V-LG-D1p"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>

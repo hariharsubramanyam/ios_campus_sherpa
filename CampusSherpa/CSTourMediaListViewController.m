@@ -73,18 +73,27 @@
     cell.textLabel.text = tourMedia.name;
     cell.detailTextLabel.text = tourMedia.description;
 
-    PFFile *imageFile = tourMedia.imageParseFile;
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [cell.imageView setImage:[[UIImage alloc] initWithData:data]];
-                [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-            });
-        }
-    }];
+    
+    if (!cell.imageView.image) {
+        PFFile *imageFile = tourMedia.imageParseFile;
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIImage *image = [[UIImage alloc] initWithData:data];
+                    ((CSTourMedia *)self.appDelegate.selectedTourLocation.media[indexPath.row]).image = data;
+                    [cell.imageView setImage:image];
+                    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                });
+            }
+        }];
 
+    }
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.appDelegate.selectedMedia = self.appDelegate.selectedTourLocation.media[indexPath.row];
 }
 
 
