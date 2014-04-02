@@ -91,7 +91,13 @@
         [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             if (!error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [cell.imageView setImage:[[UIImage alloc] initWithData:data]];
+                    UIImage *thumbnail = [[UIImage alloc] initWithData:data];
+                    CGSize itemSize = CGSizeMake(60, 40);
+                    UIGraphicsBeginImageContext(itemSize);
+                    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+                    [thumbnail drawInRect:imageRect];
+                    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
                     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
                 });
             }

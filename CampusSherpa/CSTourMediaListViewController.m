@@ -80,8 +80,13 @@
             if (!error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     UIImage *image = [[UIImage alloc] initWithData:data];
+                    CGSize itemSize = CGSizeMake(60, 40);
+                    UIGraphicsBeginImageContext(itemSize);
+                    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+                    [image drawInRect:imageRect];
+                    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
                     ((CSTourMedia *)self.appDelegate.selectedTourLocation.media[indexPath.row]).image = data;
-                    [cell.imageView setImage:image];
                     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
                 });
             }
