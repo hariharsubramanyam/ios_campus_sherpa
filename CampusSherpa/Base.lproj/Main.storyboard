@@ -23,7 +23,7 @@
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Second Tour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ErQ-7c-dnO">
                                             <rect key="frame" x="15" y="3" width="102" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -62,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="203" y="121"/>
         </scene>
-        <!--Table View Controller - My Tour-->
+        <!--Table View Controller - New Tour-->
         <scene sceneID="bMw-uo-Pjg">
             <objects>
                 <tableViewController id="quV-GE-13J" sceneMemberID="viewController">
@@ -165,8 +165,8 @@
                             <outlet property="delegate" destination="quV-GE-13J" id="VD6-6C-w6p"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Tour" id="A2e-I3-ZMU">
-                        <barButtonItem key="rightBarButtonItem" title="Add Location" id="fmc-Dy-qIR">
+                    <navigationItem key="navigationItem" title="New Tour" id="A2e-I3-ZMU">
+                        <barButtonItem key="rightBarButtonItem" title="+" systemItem="add" id="fmc-Dy-qIR">
                             <connections>
                                 <segue destination="Wog-P5-xDh" kind="push" id="zXh-WK-iB1"/>
                             </connections>
