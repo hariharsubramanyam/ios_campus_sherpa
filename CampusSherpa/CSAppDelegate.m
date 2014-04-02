@@ -15,11 +15,12 @@
 {
     [Parse setApplicationId:@"y2PUf0vXEOfhLFMJTZd7UYRRn5ZyeB5qN8Fidogz"
                   clientKey:@"qUZYMXO7GqfhcIdnPaV3xmNdEKp1vbEYrA2GYzxO"];
-    self.viewBackgroundColor = [self colorWithHexString:@"F7F5EF"];
-    [[UINavigationBar appearance] setBarTintColor:[self colorWithHexString:@"D7FBFE"]];
-    
+    self.viewBackgroundColor = [self colorWithHexString:@"E9E4D5"];
+    [[UINavigationBar appearance] setBarTintColor:[self colorWithHexString:@"17C1E4"]];
+    [[UIButton appearance] setTitleColor:[self colorWithHexString:@"0BD318"] forState:UIControlStateNormal];
     [[UITableView appearance] setBackgroundColor:self.viewBackgroundColor];
-    [[UITableViewCell appearance] setBackgroundColor:[self colorWithHexString:@"F4F4F5"]];
+    [[UITableView appearance] setSeparatorColor:[self colorWithHexString:@"8E8E93"]];
+    [[UITableViewCell appearance] setBackgroundColor:[self colorWithHexString:@"E4DDCA"]];
     return YES;
 }
 
