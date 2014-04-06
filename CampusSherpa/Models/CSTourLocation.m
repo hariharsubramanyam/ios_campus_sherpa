@@ -24,4 +24,10 @@
     
     return self;
 }
+
+- (instancetype) init{
+    self = [super init];
+    self.media = [[NSMutableArray alloc] init];
+    return self;
+}
 @end

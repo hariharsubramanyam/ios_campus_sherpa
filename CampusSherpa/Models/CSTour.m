@@ -24,4 +24,10 @@
     return self;
 }
 
+- (instancetype) init{
+    self = [super init];
+    self.tourLocations = [[NSMutableArray alloc] init];
+    return self;
+}
+
 @end

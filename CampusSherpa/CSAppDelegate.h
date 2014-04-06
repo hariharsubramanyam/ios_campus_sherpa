@@ -20,6 +20,8 @@
 @property (strong, nonatomic) CSTourLocation *selectedTourLocation;
 @property (strong, nonatomic) NSMutableArray *tours;
 @property (strong, nonatomic) CSTourMedia *selectedMedia;
+@property (strong, nonatomic) CSTour *createdTour;
+@property (strong, nonatomic) CSTourLocation *locationToEdit;
 
 @property (strong, nonatomic) UIColor *viewBackgroundColor;
 

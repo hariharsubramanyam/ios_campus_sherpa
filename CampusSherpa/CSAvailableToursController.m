@@ -108,7 +108,8 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     self.appDelegate.selectedTour = self.appDelegate.tours[indexPath.row];
 }
 
@@ -154,6 +155,18 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([[segue identifier] isEqualToString:@"NEW_TOUR"]) {
+        if (self.appDelegate.createdTour == nil) {
+            self.appDelegate.createdTour = [[CSTour alloc] init];
+        }
+    }
+}
+
+- (IBAction)unwindFromNewTour:(UIStoryboardSegue *)segue
+{
+    // save to Parse
+    // put in collection of takeable tours?
+    self.appDelegate.createdTour = nil;
 }
 
 @end
