@@ -11,6 +11,7 @@
 #import "CSTourMedia.h"
 #import "CSAppDelegate.h"
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface CSNewTourSingleLocationController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -45,6 +46,11 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
         [self.view addGestureRecognizer:tap];
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
 }
 
 -(void)dismissKeyboard {
@@ -139,6 +145,9 @@
         self.appDelegate.locationToEdit.name = self.nameField.text;
         self.appDelegate.locationToEdit.description = self.txtDescription.text;
     }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
 }
 
 @end
