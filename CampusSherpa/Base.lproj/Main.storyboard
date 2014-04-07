@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="k1d-Ml-X9U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="k1d-Ml-X9U">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -191,7 +191,7 @@
                     <navigationItem key="navigationItem" title="Locations" id="A2e-I3-ZMU">
                         <barButtonItem key="leftBarButtonItem" title="Done" id="x4u-Vo-ZUw">
                             <connections>
-                                <segue destination="gHh-4V-Bao" kind="unwind" unwindAction="unwindFromNewTourSingleLocation:" id="9Ef-hu-zm6"/>
+                                <segue destination="gHh-4V-Bao" kind="unwind" unwindAction="unwindFromNewTourLocations:" id="9Ef-hu-zm6"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" systemItem="add" id="fmc-Dy-qIR">

@@ -137,6 +137,7 @@
         self.appDelegate.locationToEdit.location =
         [[CLLocation alloc] initWithLatitude:[self.latitudeField.text doubleValue] longitude:[self.longitudeField.text doubleValue]];
         self.appDelegate.locationToEdit.name = self.nameField.text;
+        self.appDelegate.locationToEdit.description = self.txtDescription.text;
     }
 }
 

@@ -37,14 +37,14 @@
     for (CSTourMedia *media in self.media) {
         [self.mediaIDs addObject:[media saveToParse]];
     }
+    PFObject *location = [PFObject objectWithClassName:@"TourLocation"];
     if ([self.media count] > 0) {
         CSTourMedia *media = self.media[0];
         self.thumbnailParseFile = media.imageParseFile;
+        location[@"thumbnail"] = self.thumbnailParseFile;
     }
-    PFObject *location = [PFObject objectWithClassName:@"TourLocation"];
     location[@"name"] = self.name;
     location[@"description"] = self.description;
-    location[@"thumbnail"] = self.thumbnailParseFile;
     PFGeoPoint *loc = [PFGeoPoint geoPointWithLocation:self.location];
     location[@"location"] = loc;
     location[@"media"] = self.mediaIDs;
