@@ -22,4 +22,6 @@
 @property (strong, nonatomic) NSData *thumbnail;
 
 - (instancetype) initWithID:(NSString *)objectId name:(NSString *)name description:(NSString *)description location:(CLLocation *)location mediaIDs:(NSMutableArray *)mediaIDs tourID:(NSString *)tourID thumbnailParseFile:(PFFile *)thumbnailParseFile;
+
+- (NSString *) saveToParse;
 @end

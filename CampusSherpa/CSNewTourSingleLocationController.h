@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSNewTourSingleLocationController : UIViewController
+@interface CSNewTourSingleLocationController : UIViewController<UITableViewDataSource>
 
 @end

@@ -78,8 +78,7 @@
 - (void) makeQuery{
     PFQuery *query = [PFQuery queryWithClassName:@"TourMedia"];
     
-    [query whereKey:@"tourLocationID" equalTo:self.appDelegate.selectedTourLocation.objectId];
-    
+    [query whereKey:@"objectId" containedIn:self.appDelegate.selectedTourLocation.mediaIDs];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             dispatch_async(dispatch_get_main_queue(), ^{

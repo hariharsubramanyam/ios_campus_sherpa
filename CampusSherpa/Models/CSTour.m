@@ -24,10 +24,24 @@
     return self;
 }
 
-- (instancetype) init{
+- (instancetype) init {
     self = [super init];
     self.tourLocations = [[NSMutableArray alloc] init];
     return self;
+}
+
+- (NSString *) saveToParse {
+    self.tourLocationIDs = [[NSMutableArray alloc] init];
+    for (CSTourLocation *loc in self.tourLocations) {
+        [self.tourLocationIDs addObject:[loc saveToParse]];
+    }
+    PFObject *tour = [PFObject objectWithClassName:@"Tour"];
+    tour[@"name"] = self.name;
+    tour[@"description"] = self.description;
+    tour[@"expectedDuration"] = [[NSNumber alloc] initWithDouble:self.duration];
+    tour[@"tourLocationIDs"] = self.tourLocationIDs;
+    [tour save];
+    return [tour objectId];
 }
 
 @end

@@ -41,7 +41,7 @@
     self.view.backgroundColor = self.appDelegate.viewBackgroundColor;
     
     PFQuery *query = [PFQuery queryWithClassName:@"TourLocation"];
-    [query whereKey:@"tourID" equalTo:self.appDelegate.selectedTour.objectId];
+    [query whereKey:@"objectId" containedIn:self.appDelegate.selectedTour.tourLocationIDs];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             dispatch_async(dispatch_get_main_queue(), ^{

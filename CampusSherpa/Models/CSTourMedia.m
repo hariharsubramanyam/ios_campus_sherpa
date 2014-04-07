@@ -10,7 +10,6 @@
 
 @implementation CSTourMedia
 - (instancetype) initWithName:(NSString *)name description:(NSString *)description imageParseFile:(PFFile *)imageParseFile{
-    
     self = [super init];
     
     if (self) {
@@ -20,5 +19,16 @@
     }
     
     return self;
+}
+
+- (NSString *) saveToParse {
+    PFFile *imageFile = [PFFile fileWithName:[NSString stringWithFormat:@"%d.jpeg", arc4random(),nil] data:self.image];
+    self.imageParseFile = imageFile;
+    PFObject *media = [PFObject objectWithClassName:@"TourMedia"];
+    media[@"name"] = self.name;
+    media[@"description"] = self.description;
+    media[@"image"] = imageFile;
+    [media save];
+    return [media objectId];
 }
 @end

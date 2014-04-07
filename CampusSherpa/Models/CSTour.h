@@ -21,4 +21,6 @@
 @property (nonatomic, strong) NSMutableArray *tourLocations;
 
 - (instancetype) initWithID:(NSString *)objectId name:(NSString *)name description:(NSString *)description duration:(NSTimeInterval)duration tourLocationIDs:(NSMutableArray *)tourLocationIDs thumbnailParseFile:(PFFile *)thumbnailParseFile;
+
+- (NSString *) saveToParse;
 @end

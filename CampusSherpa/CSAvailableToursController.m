@@ -88,20 +88,22 @@
     cell.detailTextLabel.text = tour.description;
     if (!cell.imageView.image) {
         PFFile *imageFile = tour.thumbnailParseFile;
-        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            if (!error) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    UIImage *thumbnail = [[UIImage alloc] initWithData:data];
-                    CGSize itemSize = CGSizeMake(60, 40);
-                    UIGraphicsBeginImageContext(itemSize);
-                    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-                    [thumbnail drawInRect:imageRect];
-                    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-                    UIGraphicsEndImageContext();
-                    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-                });
-            }
-        }];
+        if (imageFile != nil) {
+            [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if (!error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        UIImage *thumbnail = [[UIImage alloc] initWithData:data];
+                        CGSize itemSize = CGSizeMake(60, 40);
+                        UIGraphicsBeginImageContext(itemSize);
+                        CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+                        [thumbnail drawInRect:imageRect];
+                        cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+                        UIGraphicsEndImageContext();
+                        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                    });
+                }
+            }];
+        }
     }
 
     
@@ -164,9 +166,15 @@
 
 - (IBAction)unwindFromNewTour:(UIStoryboardSegue *)segue
 {
-    // save to Parse
-    // put in collection of takeable tours?
+    [self.appDelegate.createdTour saveToParse];
+    [self.appDelegate.tours addObject:self.appDelegate.createdTour];
     self.appDelegate.createdTour = nil;
+    [self.tableView reloadData];
+}
+
+- (IBAction)unwindFromNewTourCancel:(UIStoryboardSegue *)segue
+{
+    // pass
 }
 
 @end

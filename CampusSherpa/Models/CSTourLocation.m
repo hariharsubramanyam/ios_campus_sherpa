@@ -7,6 +7,7 @@
 //
 
 #import "CSTourLocation.h"
+#import "CSTourMedia.h"
 
 @implementation CSTourLocation
 - (instancetype) initWithID:(NSString *)objectId name:(NSString *)name description:(NSString *)description location:(CLLocation *)location mediaIDs:(NSMutableArray *)mediaIDs tourID:(NSString *)tourID thumbnailParseFile:(PFFile *)thumbnailParseFile{
@@ -29,5 +30,26 @@
     self = [super init];
     self.media = [[NSMutableArray alloc] init];
     return self;
+}
+
+- (NSString *) saveToParse {
+    self.mediaIDs = [[NSMutableArray alloc] init];
+    for (CSTourMedia *media in self.media) {
+        [self.mediaIDs addObject:[media saveToParse]];
+    }
+    if ([self.media count] > 0) {
+        CSTourMedia *media = self.media[0];
+        self.thumbnailParseFile = media.imageParseFile;
+    }
+    PFObject *location = [PFObject objectWithClassName:@"TourLocation"];
+    location[@"name"] = self.name;
+    location[@"description"] = self.description;
+    location[@"thumbnail"] = self.thumbnailParseFile;
+    PFGeoPoint *loc = [PFGeoPoint geoPointWithLocation:self.location];
+    location[@"location"] = loc;
+    location[@"media"] = self.mediaIDs;
+    
+    [location save];
+    return [location objectId];
 }
 @end

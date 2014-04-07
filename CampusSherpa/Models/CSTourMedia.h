@@ -16,4 +16,6 @@
 @property (strong, nonatomic) NSData *image;
 
 - (instancetype) initWithName:(NSString *)name description:(NSString *)description imageParseFile:(PFFile *)imageParseFile;
+
+- (NSString *) saveToParse;
 @end

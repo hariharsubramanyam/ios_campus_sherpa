@@ -33,7 +33,6 @@
 		8A3011DC18F082CD00939E4E /* CSNewTourSingleLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3011DB18F082CD00939E4E /* CSNewTourSingleLocationController.m */; };
 		8A3011DF18F0B0BD00939E4E /* CSAddMediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3011DE18F0B0BD00939E4E /* CSAddMediaController.m */; };
 		8A3011E218F0D22300939E4E /* CSUploadImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3011E118F0D22300939E4E /* CSUploadImageController.m */; };
-		8A3011E518F11DB800939E4E /* CSNewTourMediaTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3011E418F11DB800939E4E /* CSNewTourMediaTableController.m */; };
 		8A7E611518E2A09600CA3A66 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7E611418E2A09600CA3A66 /* Parse.framework */; };
 		8A7E611718E2A1B400CA3A66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7E611618E2A1B400CA3A66 /* AudioToolbox.framework */; };
 		8A7E611918E2A1C100CA3A66 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7E611818E2A1C100CA3A66 /* CFNetwork.framework */; };
@@ -101,8 +100,6 @@
 		8A3011DE18F0B0BD00939E4E /* CSAddMediaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAddMediaController.m; sourceTree = "<group>"; };
 		8A3011E018F0D22300939E4E /* CSUploadImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSUploadImageController.h; sourceTree = "<group>"; };
 		8A3011E118F0D22300939E4E /* CSUploadImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUploadImageController.m; sourceTree = "<group>"; };
-		8A3011E318F11DB800939E4E /* CSNewTourMediaTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNewTourMediaTableController.h; sourceTree = "<group>"; };
-		8A3011E418F11DB800939E4E /* CSNewTourMediaTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNewTourMediaTableController.m; sourceTree = "<group>"; };
 		8A7E611418E2A09600CA3A66 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8A7E611618E2A1B400CA3A66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8A7E611818E2A1C100CA3A66 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -276,8 +273,6 @@
 				8A3011DE18F0B0BD00939E4E /* CSAddMediaController.m */,
 				8A3011E018F0D22300939E4E /* CSUploadImageController.h */,
 				8A3011E118F0D22300939E4E /* CSUploadImageController.m */,
-				8A3011E318F11DB800939E4E /* CSNewTourMediaTableController.h */,
-				8A3011E418F11DB800939E4E /* CSNewTourMediaTableController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -393,7 +388,6 @@
 				736D48B218EB828000DA9E56 /* CSTourMediaListViewController.m in Sources */,
 				733198DC18DE4A58001CBEED /* CSTourLocation.m in Sources */,
 				8A3011DF18F0B0BD00939E4E /* CSAddMediaController.m in Sources */,
-				8A3011E518F11DB800939E4E /* CSNewTourMediaTableController.m in Sources */,
 				733198D618DE49AF001CBEED /* CSTour.m in Sources */,
 				733198D918DE4A4C001CBEED /* CSUser.m in Sources */,
 				8A7E612A18E363DA00CA3A66 /* CSStartTourViewController.m in Sources */,
