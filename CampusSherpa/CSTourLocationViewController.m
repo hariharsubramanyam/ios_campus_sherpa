@@ -77,6 +77,7 @@
 
 - (void) makeQuery{
     PFQuery *query = [PFQuery queryWithClassName:@"TourMedia"];
+    NSLog(@"%@", self.appDelegate.selectedTourLocation.name);
     
     [query whereKey:@"objectId" containedIn:self.appDelegate.selectedTourLocation.mediaIDs];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -87,6 +88,7 @@
                 for (PFObject *object in objects) {
                     [self.appDelegate.selectedTourLocation.mediaIDs addObject:object.objectId];
                     CSTourMedia *tourMedia = [[CSTourMedia alloc] initWithName:object[@"name"] description:object[@"description"] imageParseFile:object[@"image"]];
+                    NSLog(@"Queried for %@ and got %@", self.appDelegate.selectedTourLocation.name, tourMedia.name);
                     [self.appDelegate.selectedTourLocation.media addObject:tourMedia];
                 }
             });

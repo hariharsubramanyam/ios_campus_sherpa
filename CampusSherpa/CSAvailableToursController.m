@@ -166,10 +166,15 @@
 
 - (IBAction)unwindFromNewTour:(UIStoryboardSegue *)segue
 {
-    [self.appDelegate.createdTour saveToParse];
-    [self.appDelegate.tours addObject:self.appDelegate.createdTour];
-    self.appDelegate.createdTour = nil;
-    [self.tableView reloadData];
+    CSAppDelegate *appDelegate = self.appDelegate;
+    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [appDelegate.createdTour saveToParse];
+        dispatch_async( dispatch_get_main_queue(), ^{
+            [self.appDelegate.tours addObject:self.appDelegate.createdTour];
+            self.appDelegate.createdTour = nil;
+            [self.tableView reloadData];
+        });
+    });
 }
 
 - (IBAction)unwindFromNewTourCancel:(UIStoryboardSegue *)segue

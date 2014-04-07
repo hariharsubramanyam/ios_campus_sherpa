@@ -48,7 +48,7 @@
     PFGeoPoint *loc = [PFGeoPoint geoPointWithLocation:self.location];
     location[@"location"] = loc;
     location[@"media"] = self.mediaIDs;
-    
+    NSLog(@"%d", [self.mediaIDs count]);
     [location save];
     return [location objectId];
 }

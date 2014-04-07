@@ -77,7 +77,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MediaPrototype" forIndexPath:indexPath];
-    cell.textLabel.text = self.appDelegate.locationToEdit.media[indexPath.item];
+    cell.textLabel.text = ((CSTourMedia *)(self.appDelegate.locationToEdit.media[indexPath.item])).name;
     return cell;
 }
 

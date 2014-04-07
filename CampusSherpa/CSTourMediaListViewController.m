@@ -60,7 +60,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.appDelegate.selectedTourLocation.mediaIDs count];
+    NSLog(@"Number of media items for this location: %d", [self.appDelegate.selectedTourLocation.media count]);
+    return [self.appDelegate.selectedTourLocation.media count];
 }
 
 

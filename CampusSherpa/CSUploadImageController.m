@@ -92,8 +92,8 @@
     if (sender == self.cancelButton) {
         self.image = nil;
     } else {
-        self.titleStr = self.imageDesc.text;
-        self.descStr = self.imageTitle.text;
+        self.titleStr = self.imageTitle.text;
+        self.descStr = self.imageDesc.text;
     }
 }
 

@@ -49,7 +49,8 @@
                 for (PFObject *object in objects) {
                     PFGeoPoint *geopoint = object[@"location"];
                     CLLocation *location = [[CLLocation alloc] initWithLatitude:geopoint.latitude longitude:geopoint.longitude];
-                    CSTourLocation *tourLocation = [[CSTourLocation alloc] initWithID:object.objectId name:object[@"name"] description:object[@"description"] location:location mediaIDs:object[@"mediaIDs"] tourID:object[@"tourID"] thumbnailParseFile:object[@"thumbnail"]];
+                    NSLog(@"Got %@ with the mediaIDs %d", object[@"name"], [object[@"media"] count]);
+                    CSTourLocation *tourLocation = [[CSTourLocation alloc] initWithID:object.objectId name:object[@"name"] description:object[@"description"] location:location mediaIDs:object[@"media"] tourID:object[@"tourID"] thumbnailParseFile:object[@"thumbnail"]];
                     [self.appDelegate.selectedTour.tourLocations addObject:tourLocation];
                     CLLocationCoordinate2D mapCenter = {location.coordinate.latitude, location.coordinate.longitude};
                     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(mapCenter, METERS_PER_MILE, METERS_PER_MILE);

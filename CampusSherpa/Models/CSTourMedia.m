@@ -22,7 +22,7 @@
 }
 
 - (NSString *) saveToParse {
-    PFFile *imageFile = [PFFile fileWithName:[NSString stringWithFormat:@"%d.jpeg", arc4random(), nil] data:self.image];
+    PFFile *imageFile = [PFFile fileWithName:[NSString stringWithFormat:@"Image%d.jpeg", abs(arc4random()), nil] data:self.image];
     self.imageParseFile = imageFile;
     PFObject *media = [PFObject objectWithClassName:@"TourMedia"];
     media[@"name"] = self.name;
