@@ -32,7 +32,17 @@
 {
     [super viewDidLoad];
     self.appDelegate = (CSAppDelegate *)[[UIApplication sharedApplication] delegate];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
     // Do any additional setup after loading the view.
+}
+
+-(void)dismissKeyboard {
+    [self.description resignFirstResponder];
+    [self.tourName resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning

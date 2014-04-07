@@ -17,6 +17,7 @@
 @property (strong, nonatomic) CSAppDelegate *appDelegate;
 @property (weak, nonatomic) IBOutlet UITextField *latitudeField;
 @property (weak, nonatomic) IBOutlet UITextField *longitudeField;
+@property (weak, nonatomic) IBOutlet UITextView *txtDescription;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
@@ -40,6 +41,18 @@
     self.mediaTable.dataSource = self;
     self.appDelegate = (CSAppDelegate *)[[UIApplication sharedApplication] delegate];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+        [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard {
+    [self.latitudeField resignFirstResponder];
+    [self.longitudeField resignFirstResponder];
+    [self.addressField resignFirstResponder];
+    [self.nameField resignFirstResponder];
+    [self.txtDescription resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
