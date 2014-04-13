@@ -25,4 +25,6 @@
 
 @property (strong, nonatomic) UIColor *viewBackgroundColor;
 
+- (void) logMessageToParse:(NSString *)message;
+
 @end

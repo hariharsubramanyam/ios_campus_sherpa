@@ -11,6 +11,14 @@
 
 @implementation CSAppDelegate
 
+
+- (void) logMessageToParse:(NSString *)message{
+    PFObject *logObject = [[PFObject alloc] initWithClassName:@"Log"];
+    [logObject setObject:message forKey:@"LogMessage"];
+    [logObject setObject:[[PFUser user] objectId] forKey:@"UserID"];
+    [logObject saveInBackground];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Parse setApplicationId:@"y2PUf0vXEOfhLFMJTZd7UYRRn5ZyeB5qN8Fidogz"
