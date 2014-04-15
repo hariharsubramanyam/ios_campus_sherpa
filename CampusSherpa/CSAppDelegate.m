@@ -15,8 +15,12 @@
 - (void) logMessageToParse:(NSString *)message{
     PFObject *logObject = [[PFObject alloc] initWithClassName:@"Log"];
     [logObject setObject:message forKey:@"LogMessage"];
-    [logObject setObject:[[PFUser user] objectId] forKey:@"UserID"];
-    [logObject saveInBackground];
+    [PFUser enableAutomaticUser];
+    PFUser *currentUser = [PFUser currentUser];
+    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [logObject setObject:[[PFUser currentUser] objectId] forKey:@"UserID"];
+        [logObject saveInBackground];
+    }];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
