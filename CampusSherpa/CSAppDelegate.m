@@ -15,6 +15,8 @@
 - (void) logMessageToParse:(NSString *)message{
     PFObject *logObject = [[PFObject alloc] initWithClassName:@"Log"];
     [logObject setObject:message forKey:@"LogMessage"];
+    NSNumber *timestamp = [[NSNumber alloc] initWithDouble:[[NSDate date] timeIntervalSince1970]];
+    [logObject setObject:timestamp forKey:@"Timestamp"];
     [PFUser enableAutomaticUser];
     PFUser *currentUser = [PFUser currentUser];
     [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

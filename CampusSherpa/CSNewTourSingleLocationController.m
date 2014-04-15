@@ -102,7 +102,8 @@
 }
 
 - (IBAction)useAddress:(id)sender {
-    [self.appDelegate logMessageToParse:@"Entered address for new location"];
+    NSString *logMessage = [NSString stringWithFormat:@"Entered address for new location - %@", self.addressField.text];
+    [self.appDelegate logMessageToParse:logMessage];
     CLLocationCoordinate2D coord = [CSNewTourSingleLocationController geoCodeUsingAddress:self.addressField.text];
     self.latitudeField.text = [NSString stringWithFormat:@"%f", coord.latitude];
     self.longitudeField.text = [NSString stringWithFormat:@"%f", coord.longitude];
@@ -141,7 +142,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if (sender == self.doneButton) {
-        [self.appDelegate logMessageToParse:@"Finished adding location to tour"];
+        NSString *logMessage = [NSString stringWithFormat:@"Finished adding location to tour - %@", self.nameField.text];
+        [self.appDelegate logMessageToParse:logMessage];
         self.appDelegate.locationToEdit.location =
         [[CLLocation alloc] initWithLatitude:[self.latitudeField.text doubleValue] longitude:[self.longitudeField.text doubleValue]];
         self.appDelegate.locationToEdit.name = self.nameField.text;

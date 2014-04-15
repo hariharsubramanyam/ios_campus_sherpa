@@ -59,7 +59,8 @@
     if (sender == self.doneButton) {
         self.appDelegate.createdTour.name = self.tourName.text;
         self.appDelegate.createdTour.description = self.description.text;
-        [self.appDelegate logMessageToParse:@"Finished create tour"];
+        NSString *logMessage = [NSString stringWithFormat:@"Created tour - %@", self.appDelegate.createdTour.name];
+        [self.appDelegate logMessageToParse:logMessage];
     } else if (sender == self.cancelButton) {
         self.appDelegate.createdTour = nil;
         [self.appDelegate logMessageToParse:@"Cancelled create tour"];

@@ -26,7 +26,6 @@
 - (IBAction)onSeeMediaClick:(id)sender {
 }
 - (IBAction)onPreviousLocationClick:(id)sender {
-    [self.appDelegate logMessageToParse:@"Previous location"];
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
         if(self.appDelegate.selectedTour.tourLocations[i] == self.appDelegate.selectedTourLocation){
             if(i - 1 < 0){
@@ -34,6 +33,8 @@
             }else{
                 self.appDelegate.selectedTourLocation = self.appDelegate.selectedTour.tourLocations[i-1];
             }
+            NSString *logMessage = [NSString stringWithFormat:@"Going to previous location - %@", self.appDelegate.selectedTourLocation.name];
+            [self.appDelegate logMessageToParse:logMessage];
             [self updateUI];
             [self makeQuery];
             return;
@@ -41,7 +42,6 @@
     }
 }
 - (IBAction)onNextLocationClick:(id)sender {
-    [self.appDelegate logMessageToParse:@"Next location"];
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
         if(self.appDelegate.selectedTour.tourLocations[i] == self.appDelegate.selectedTourLocation){
             if(i + 1 >= [self.appDelegate.selectedTour.tourLocations count]){
@@ -49,6 +49,8 @@
             }else{
                 self.appDelegate.selectedTourLocation = self.appDelegate.selectedTour.tourLocations[i+1];
             }
+            NSString *logMessage = [NSString stringWithFormat:@"Going to next location - %@", self.appDelegate.selectedTourLocation.name];
+            [self.appDelegate logMessageToParse:logMessage];
             [self updateUI];
             [self makeQuery];
             return;

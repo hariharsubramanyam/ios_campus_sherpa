@@ -99,7 +99,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.appDelegate.selectedMedia = self.appDelegate.selectedTourLocation.media[indexPath.row];
-    [self.appDelegate logMessageToParse:@"Clicked on media from list"];
+    NSString *logMessage = [NSString stringWithFormat:@"Clicked on media item - %@", self.appDelegate.selectedMedia.name];
+    [self.appDelegate logMessageToParse:logMessage];
 }
 
 
