@@ -158,9 +158,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"NEW_TOUR"]) {
+        [self.appDelegate logMessageToParse:@"Started making tour"];
         if (self.appDelegate.createdTour == nil) {
             self.appDelegate.createdTour = [[CSTour alloc] init];
         }
+    } else {
+        [self.appDelegate logMessageToParse:@"Started taking tour"];
     }
 }
 

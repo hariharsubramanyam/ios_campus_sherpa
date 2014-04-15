@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     self.appDelegate = (CSAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self.appDelegate logMessageToParse:@"Opened add media view for new tour"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

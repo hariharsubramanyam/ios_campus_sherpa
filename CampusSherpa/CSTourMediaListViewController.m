@@ -34,7 +34,7 @@
     UIViewAutoresizingFlexibleHeight;
     
     self.appDelegate = (CSAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
+    [self.appDelegate logMessageToParse:@"Opened media list"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -100,6 +100,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.appDelegate.selectedMedia = self.appDelegate.selectedTourLocation.media[indexPath.row];
+    [self.appDelegate logMessageToParse:@"Clicked on media from list"];
 }
 
 

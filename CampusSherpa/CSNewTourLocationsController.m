@@ -125,6 +125,7 @@
 {
     if (sender == self.addLocationButton) {
         self.appDelegate.locationToEdit = [[CSTourLocation alloc] init];
+        [self.appDelegate logMessageToParse:@"Adding location to tour"];
     }
 }
 

@@ -59,8 +59,10 @@
     if (sender == self.doneButton) {
         self.appDelegate.createdTour.name = self.tourName.text;
         self.appDelegate.createdTour.description = self.description.text;
+        [self.appDelegate logMessageToParse:@"Finished create tour"];
     } else if (sender == self.cancelButton) {
         self.appDelegate.createdTour = nil;
+        [self.appDelegate logMessageToParse:@"Cancelled create tour"];
     }
 }
 

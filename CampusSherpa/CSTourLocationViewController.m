@@ -26,6 +26,7 @@
 - (IBAction)onSeeMediaClick:(id)sender {
 }
 - (IBAction)onPreviousLocationClick:(id)sender {
+    [self.appDelegate logMessageToParse:@"Previous location"];
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
         if(self.appDelegate.selectedTour.tourLocations[i] == self.appDelegate.selectedTourLocation){
             if(i - 1 < 0){
@@ -40,6 +41,7 @@
     }
 }
 - (IBAction)onNextLocationClick:(id)sender {
+    [self.appDelegate logMessageToParse:@"Next location"];
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
         if(self.appDelegate.selectedTour.tourLocations[i] == self.appDelegate.selectedTourLocation){
             if(i + 1 >= [self.appDelegate.selectedTour.tourLocations count]){
