@@ -64,11 +64,17 @@
     
     // Get tour and set text labels
     CSTour *tour = self.appDelegate.tours[indexPath.item];
-    cell.textLabel.text = tour.name;
-    cell.detailTextLabel.text = tour.description;
+    UILabel *titleLabel = (UILabel *)[cell viewWithTag:1];
+    titleLabel.text = tour.name;
+    
+    
+    UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:3];
+    descriptionLabel.text = tour.description;
+    
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:2];
     
     // Set image view if there is none
-    if (!cell.imageView.image) {
+    if (!imageView.image) {
         
         // Asynchronously convert parse image to NSData
         PFFile *imageFile = tour.thumbnailParseFile;
@@ -79,12 +85,13 @@
                         
                         // Force image to 60x40 and put in image view
                         UIImage *thumbnail = [[UIImage alloc] initWithData:data];
-                        CGSize itemSize = CGSizeMake(60, 40);
-                        UIGraphicsBeginImageContext(itemSize);
-                        CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-                        [thumbnail drawInRect:imageRect];
-                        cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-                        UIGraphicsEndImageContext();
+//                        CGSize itemSize = CGSizeMake(60, 40);
+//                        UIGraphicsBeginImageContext(itemSize);
+//                        CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+//                        [thumbnail drawInRect:imageRect];
+//                        imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+//                        UIGraphicsEndImageContext();
+                        imageView.image = thumbnail;
                         [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
                     });
                 }
