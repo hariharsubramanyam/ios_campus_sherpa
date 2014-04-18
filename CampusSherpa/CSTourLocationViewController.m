@@ -3,20 +3,23 @@
 #import "CSImageMedia.h"
 
 @interface CSTourLocationViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *btnPreviousLocation;
-@property (weak, nonatomic) IBOutlet UIButton *btnNextLocation;
+@property (weak, nonatomic) IBOutlet UIButton *btnPreviousLocation; // Previous location button
+@property (weak, nonatomic) IBOutlet UIButton *btnNextLocation;     // Next location button
+@property (weak, nonatomic) IBOutlet UIButton *btnSeeMedia;         // See media button
 
-@property (weak, nonatomic) IBOutlet UITextView *txtDescription;
-@property (weak, nonatomic) IBOutlet UIButton *btnSeeMedia;
-@property (weak, nonatomic) IBOutlet UIImageView *imgLocation;
-@property (weak, nonatomic) IBOutlet UILabel *lblLocationName;
+@property (weak, nonatomic) IBOutlet UITextView *txtDescription;    // Description of location
+@property (weak, nonatomic) IBOutlet UIImageView *imgLocation;      // Picture of location
+@property (weak, nonatomic) IBOutlet UILabel *lblLocationName;      // Name of location
 
-@property (strong, nonatomic) CSAppDelegate *appDelegate;
+@property (strong, nonatomic) CSAppDelegate *appDelegate;           // App delegate
 @end
 
 @implementation CSTourLocationViewController
+
+
 - (IBAction)onSeeMediaClick:(id)sender {
 }
+
 - (IBAction)onPreviousLocationClick:(id)sender {
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
         if(self.appDelegate.selectedTour.tourLocations[i] == self.appDelegate.selectedTourLocation){
