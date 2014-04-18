@@ -36,9 +36,6 @@
     // Get app delegate
     self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication] delegate]);
     
-    // Set background color
-    self.view.backgroundColor = self.appDelegate.viewBackgroundColor;
-    
     // Make Parse query and get the tour locations for given tour
     PFQuery *query = [PFQuery queryWithClassName:@"TourLocation"];
     

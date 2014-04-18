@@ -26,7 +26,6 @@
     self.title = self.appDelegate.selectedMedia.name;
     self.txtDescription.text = self.appDelegate.selectedMedia.description;
     self.imgMedia.image = [UIImage imageWithData:self.appDelegate.selectedMedia.image];
-    self.view.backgroundColor = self.appDelegate.viewBackgroundColor;
 }
 
 - (void)didReceiveMemoryWarning

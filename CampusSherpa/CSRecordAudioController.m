@@ -62,8 +62,6 @@
     // Get the app delegate
     self.appDelegate = [[UIApplication sharedApplication] delegate];
     
-    // Set the background color
-    self.view.backgroundColor = self.appDelegate.viewBackgroundColor;
     
     // We're not recording
     self.recording = NO;

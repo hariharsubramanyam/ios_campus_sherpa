@@ -90,7 +90,6 @@
 - (void)viewDidLoad
 {
     self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication]delegate]);
-    self.view.backgroundColor = self.appDelegate.viewBackgroundColor;
 
     [super viewDidLoad];
     
@@ -135,15 +134,22 @@
     
 }
 
+/* Update UI to reflect location */
 - (void) updateUI{
+    
+    // Set location name and description
     self.txtDescription.text = self.appDelegate.selectedTourLocation.description;
     self.lblLocationName.text = self.appDelegate.selectedTourLocation.name;
+    
+    // List index of location on the tour
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
         if (self.appDelegate.selectedTourLocation == self.appDelegate.selectedTour.tourLocations[i]) {
             self.title = [NSString stringWithFormat:@"Location %d of %d", (i+1), [self.appDelegate.selectedTour.tourLocations count]];
             break;
         }
     }
+    
+    // Display image for location
     PFFile *imageFile = self.appDelegate.selectedTourLocation.thumbnailParseFile;
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {

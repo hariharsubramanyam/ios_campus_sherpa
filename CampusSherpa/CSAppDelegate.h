@@ -15,8 +15,6 @@
 @property (strong, nonatomic) CSTour *createdTour;
 @property (strong, nonatomic) CSTourLocation *locationToEdit;
 
-@property (strong, nonatomic) UIColor *viewBackgroundColor;
-
 - (void) logMessageToParse:(NSString *)message;
 
 @end
