@@ -1,5 +1,5 @@
 #import "CSTourLocation.h"
-#import "CSImageMedia.h"
+#import "CSTourMedia.h"
 
 @implementation CSTourLocation
 - (instancetype) initWithID:(NSString *)objectId name:(NSString *)name description:(NSString *)description location:(CLLocation *)location mediaIDs:(NSMutableArray *)mediaIDs tourID:(NSString *)tourID thumbnailParseFile:(PFFile *)thumbnailParseFile{
@@ -26,12 +26,12 @@
 
 - (NSString *) saveToParse {
     self.mediaIDs = [[NSMutableArray alloc] init];
-    for (CSImageMedia *media in self.media) {
+    for (CSTourMedia *media in self.media) {
         [self.mediaIDs addObject:[media saveToParse]];
     }
     PFObject *location = [PFObject objectWithClassName:@"TourLocation"];
     if ([self.media count] > 0) {
-        CSImageMedia *media = self.media[0];
+        CSTourMedia *media = self.media[0];
         self.thumbnailParseFile = media.imageParseFile;
         location[@"thumbnail"] = self.thumbnailParseFile;
     }

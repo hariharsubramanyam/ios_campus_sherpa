@@ -23,7 +23,7 @@
 		733198D618DE49AF001CBEED /* CSTour.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198D518DE49AF001CBEED /* CSTour.m */; };
 		733198D918DE4A4C001CBEED /* CSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198D818DE4A4C001CBEED /* CSUser.m */; };
 		733198DC18DE4A58001CBEED /* CSTourLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198DB18DE4A58001CBEED /* CSTourLocation.m */; };
-		733198DF18DE4A67001CBEED /* CSImageMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198DE18DE4A67001CBEED /* CSImageMedia.m */; };
+		733198DF18DE4A67001CBEED /* CSTourMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 733198DE18DE4A67001CBEED /* CSTourMedia.m */; };
 		7343BDF118E20EFE006321FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7343BDF018E20EFE006321FD /* MapKit.framework */; };
 		736D48B218EB828000DA9E56 /* CSTourMediaListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736D48B118EB828000DA9E56 /* CSTourMediaListViewController.m */; };
 		736D48B518EB8AF200DA9E56 /* CSTourMediaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736D48B418EB8AF200DA9E56 /* CSTourMediaDetailViewController.m */; };
@@ -83,8 +83,8 @@
 		733198D818DE4A4C001CBEED /* CSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSUser.m; path = Models/CSUser.m; sourceTree = "<group>"; };
 		733198DA18DE4A58001CBEED /* CSTourLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSTourLocation.h; path = Models/CSTourLocation.h; sourceTree = "<group>"; };
 		733198DB18DE4A58001CBEED /* CSTourLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSTourLocation.m; path = Models/CSTourLocation.m; sourceTree = "<group>"; };
-		733198DD18DE4A67001CBEED /* CSImageMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSImageMedia.h; path = Models/CSImageMedia.h; sourceTree = "<group>"; };
-		733198DE18DE4A67001CBEED /* CSImageMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSImageMedia.m; path = Models/CSImageMedia.m; sourceTree = "<group>"; };
+		733198DD18DE4A67001CBEED /* CSTourMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSTourMedia.h; path = Models/CSTourMedia.h; sourceTree = "<group>"; };
+		733198DE18DE4A67001CBEED /* CSTourMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSTourMedia.m; path = Models/CSTourMedia.m; sourceTree = "<group>"; };
 		7343BDF018E20EFE006321FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		736D48B018EB828000DA9E56 /* CSTourMediaListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTourMediaListViewController.h; sourceTree = "<group>"; };
 		736D48B118EB828000DA9E56 /* CSTourMediaListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTourMediaListViewController.m; sourceTree = "<group>"; };
@@ -251,8 +251,8 @@
 				733198D818DE4A4C001CBEED /* CSUser.m */,
 				733198DA18DE4A58001CBEED /* CSTourLocation.h */,
 				733198DB18DE4A58001CBEED /* CSTourLocation.m */,
-				733198DD18DE4A67001CBEED /* CSImageMedia.h */,
-				733198DE18DE4A67001CBEED /* CSImageMedia.m */,
+				733198DD18DE4A67001CBEED /* CSTourMedia.h */,
+				733198DE18DE4A67001CBEED /* CSTourMedia.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -392,7 +392,7 @@
 				733198AD18DE47CC001CBEED /* CSAppDelegate.m in Sources */,
 				8A3011E218F0D22300939E4E /* CSUploadImageController.m in Sources */,
 				8A3011DC18F082CD00939E4E /* CSNewTourSingleLocationController.m in Sources */,
-				733198DF18DE4A67001CBEED /* CSImageMedia.m in Sources */,
+				733198DF18DE4A67001CBEED /* CSTourMedia.m in Sources */,
 				733198A918DE47CC001CBEED /* main.m in Sources */,
 				73878CF91900A69900F42C0F /* CSRecordAudioController.m in Sources */,
 				736D48B218EB828000DA9E56 /* CSTourMediaListViewController.m in Sources */,

@@ -1,6 +1,6 @@
 #import "CSNewTourSingleLocationController.h"
 #import "CSUploadImageController.h"
-#import "CSImageMedia.h"
+#import "CSTourMedia.h"
 #import "CSAppDelegate.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
@@ -69,7 +69,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MediaPrototype" forIndexPath:indexPath];
-    cell.textLabel.text = ((CSImageMedia *)(self.appDelegate.locationToEdit.media[indexPath.item])).name;
+    cell.textLabel.text = ((CSTourMedia *)(self.appDelegate.locationToEdit.media[indexPath.item])).name;
     return cell;
 }
 
@@ -78,7 +78,7 @@
     if ([[segue sourceViewController] class] == [CSUploadImageController class]) {
         CSUploadImageController *imgCtrl = [segue sourceViewController];
         if (imgCtrl.image != nil) {
-            CSImageMedia *createdMedia = [[CSImageMedia alloc] initWithName:imgCtrl.titleStr description:imgCtrl.descStr imageParseFile:nil];
+            CSTourMedia *createdMedia = [[CSTourMedia alloc] initWithName:imgCtrl.titleStr description:imgCtrl.descStr imageParseFile:nil];
             createdMedia.image = imgCtrl.image;
             [self.appDelegate.locationToEdit.media addObject:createdMedia];
             [self.mediaTable reloadData];

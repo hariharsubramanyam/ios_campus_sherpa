@@ -1,6 +1,6 @@
-#import "CSImageMedia.h"
+#import "CSTourMedia.h"
 
-@implementation CSImageMedia
+@implementation CSTourMedia
 - (instancetype) initWithName:(NSString *)name description:(NSString *)description imageParseFile:(PFFile *)imageParseFile{
     self = [super init];
     

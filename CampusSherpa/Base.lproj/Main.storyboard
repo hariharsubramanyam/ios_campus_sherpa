@@ -300,7 +300,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSeeMediaClick:" destination="ZXE-Hh-GJS" eventType="touchUpInside" id="fx2-mm-JxF"/>
                                     <segue destination="2B1-wI-RBO" kind="push" id="XAO-oS-Wio"/>
                                 </connections>
                             </button>

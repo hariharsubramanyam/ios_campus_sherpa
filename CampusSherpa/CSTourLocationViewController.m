@@ -1,6 +1,6 @@
 #import "CSTourLocationViewController.h"
 #import "CSAppDelegate.h"
-#import "CSImageMedia.h"
+#import "CSTourMedia.h"
 
 @interface CSTourLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnPreviousLocation; // Previous location button
@@ -17,51 +17,76 @@
 @implementation CSTourLocationViewController
 
 
-- (IBAction)onSeeMediaClick:(id)sender {
-}
-
+/* Previous location button click */
 - (IBAction)onPreviousLocationClick:(id)sender {
+    
+    // Iterate through all the locations
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
+        
+        // Find the current location
         if(self.appDelegate.selectedTour.tourLocations[i] == self.appDelegate.selectedTourLocation){
+            
+            // Handle array out of bounds
             if(i - 1 < 0){
                 self.appDelegate.selectedTourLocation = [self.appDelegate.selectedTour.tourLocations lastObject];
             }else{
                 self.appDelegate.selectedTourLocation = self.appDelegate.selectedTour.tourLocations[i-1];
             }
+            
+            // Log message
             NSString *logMessage = [NSString stringWithFormat:@"Going to previous location - %@", self.appDelegate.selectedTourLocation.name];
             [self.appDelegate logMessageToParse:logMessage];
+            
+            // Update the UI and query for the locations
             [self updateUI];
             [self makeQuery];
+            
+            // When we've updated the UI, quit the loop
             return;
         }
     }
 }
+
+/* Next location button click */
 - (IBAction)onNextLocationClick:(id)sender {
+
+    // Iterate through all the locations
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
+        
+        // Find the current location
         if(self.appDelegate.selectedTour.tourLocations[i] == self.appDelegate.selectedTourLocation){
+            
+            // Handle array out of bounds
             if(i + 1 >= [self.appDelegate.selectedTour.tourLocations count]){
                 self.appDelegate.selectedTourLocation = [self.appDelegate.selectedTour.tourLocations firstObject];
             }else{
                 self.appDelegate.selectedTourLocation = self.appDelegate.selectedTour.tourLocations[i+1];
             }
+            
+            // Log message
             NSString *logMessage = [NSString stringWithFormat:@"Going to next location - %@", self.appDelegate.selectedTourLocation.name];
             [self.appDelegate logMessageToParse:logMessage];
+            
+            // Update the UI and query for the locations
             [self updateUI];
             [self makeQuery];
+
+            // When we've updated the UI, quit the loop
             return;
         }
     }
 }
 
+
+/* Init with nib */
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
+    if (self) {}
     return self;
 }
 
+/* View load */
 - (void)viewDidLoad
 {
     self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication]delegate]);
@@ -75,18 +100,32 @@
     
 }
 
+/* Retrieve the Tour media */
 - (void) makeQuery{
-    PFQuery *query = [PFQuery queryWithClassName:@"TourMedia"];
     
+    // Query Parse for TourMedia for the current tour location
+    PFQuery *query = [PFQuery queryWithClassName:@"TourMedia"];
     [query whereKey:@"objectId" containedIn:self.appDelegate.selectedTourLocation.mediaIDs];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                
                 self.appDelegate.selectedTourLocation.media = [[NSMutableArray alloc] init];
                 self.appDelegate.selectedTourLocation.mediaIDs = [[NSMutableArray alloc] init];
+                
+                // For each TourMedia object
                 for (PFObject *object in objects) {
+                    
+                    // Add the ID to the list
                     [self.appDelegate.selectedTourLocation.mediaIDs addObject:object.objectId];
-                    CSImageMedia *tourMedia = [[CSImageMedia alloc] initWithName:object[@"name"] description:object[@"description"] imageParseFile:object[@"image"]];
+                    
+                    // Create the media if it's an image
+                    CSTourMedia *tourMedia = [[CSTourMedia alloc] initWithName:object[@"name"]
+                                                                     description:object[@"description"]
+                                                                  imageParseFile:object[@"image"]];
+                    
+                    // Add the media to the list
                     [self.appDelegate.selectedTourLocation.media addObject:tourMedia];
                 }
             });
