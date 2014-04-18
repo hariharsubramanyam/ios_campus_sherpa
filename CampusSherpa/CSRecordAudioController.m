@@ -1,11 +1,3 @@
-//
-//  CSRecordAudioController.m
-//  CampusSherpa
-//
-//  Created by Harihar Subramanyam on 4/17/14.
-//  Copyright (c) 2014 Campus Sherpa. All rights reserved.
-//
-
 #import "CSRecordAudioController.h"
 #import "CSAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>

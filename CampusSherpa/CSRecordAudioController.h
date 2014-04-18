@@ -1,11 +1,3 @@
-//
-//  CSRecordAudioController.h
-//  CampusSherpa
-//
-//  Created by Harihar Subramanyam on 4/17/14.
-//  Copyright (c) 2014 Campus Sherpa. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>

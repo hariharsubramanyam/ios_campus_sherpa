@@ -1,11 +1,3 @@
-//
-//  CSTourLocationViewController.m
-//  CampusSherpa
-//
-//  Created by Harihar Subramanyam on 3/30/14.
-//  Copyright (c) 2014 Campus Sherpa. All rights reserved.
-//
-
 #import "CSTourLocationViewController.h"
 #import "CSAppDelegate.h"
 #import "CSImageMedia.h"
@@ -73,6 +65,7 @@
     self.view.backgroundColor = self.appDelegate.viewBackgroundColor;
 
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     [self updateUI];
     [self makeQuery];

@@ -1,11 +1,3 @@
-//
-//  CSUploadImageController.m
-//  CampusSherpa
-//
-//  Created by Tesline Thomas on 4/5/14.
-//  Copyright (c) 2014 Campus Sherpa. All rights reserved.
-//
-
 #import "CSUploadImageController.h"
 #import "CSAppDelegate.h"
 
