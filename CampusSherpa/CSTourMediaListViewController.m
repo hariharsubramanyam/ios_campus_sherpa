@@ -8,7 +8,7 @@
 
 #import "CSTourMediaListViewController.h"
 #import "CSAppDelegate.h"
-#import "CSTourMedia.h"
+#import "CSImageMedia.h"
 #import <Parse/Parse.h>
 
 @interface CSTourMediaListViewController ()
@@ -69,7 +69,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TourMediaIdentifier" forIndexPath:indexPath];
     
     // Configure the cell...
-    CSTourMedia *tourMedia = self.appDelegate.selectedTourLocation.media[indexPath.row];
+    CSImageMedia *tourMedia = self.appDelegate.selectedTourLocation.media[indexPath.row];
     cell.textLabel.text = tourMedia.name;
     cell.detailTextLabel.text = tourMedia.description;
 
@@ -86,7 +86,7 @@
                     [image drawInRect:imageRect];
                     cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
                     UIGraphicsEndImageContext();
-                    ((CSTourMedia *)self.appDelegate.selectedTourLocation.media[indexPath.row]).image = data;
+                    ((CSImageMedia *)self.appDelegate.selectedTourLocation.media[indexPath.row]).image = data;
                     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
                 });
             }

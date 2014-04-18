@@ -8,7 +8,7 @@
 
 #import "CSTourLocationViewController.h"
 #import "CSAppDelegate.h"
-#import "CSTourMedia.h"
+#import "CSImageMedia.h"
 
 @interface CSTourLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnPreviousLocation;
@@ -90,7 +90,7 @@
                 self.appDelegate.selectedTourLocation.mediaIDs = [[NSMutableArray alloc] init];
                 for (PFObject *object in objects) {
                     [self.appDelegate.selectedTourLocation.mediaIDs addObject:object.objectId];
-                    CSTourMedia *tourMedia = [[CSTourMedia alloc] initWithName:object[@"name"] description:object[@"description"] imageParseFile:object[@"image"]];
+                    CSImageMedia *tourMedia = [[CSImageMedia alloc] initWithName:object[@"name"] description:object[@"description"] imageParseFile:object[@"image"]];
                     [self.appDelegate.selectedTourLocation.media addObject:tourMedia];
                 }
             });

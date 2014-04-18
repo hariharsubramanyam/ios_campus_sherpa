@@ -10,7 +10,7 @@
 #import "CSAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import "CSTourMedia.h"
+#import "CSImageMedia.h"
 
 @interface CSRecordAudioController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnRecord;

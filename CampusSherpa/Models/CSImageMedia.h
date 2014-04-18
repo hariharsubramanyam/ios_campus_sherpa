@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
-@interface CSTourMedia : NSObject
+@interface CSImageMedia : NSObject
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) PFFile *imageParseFile;

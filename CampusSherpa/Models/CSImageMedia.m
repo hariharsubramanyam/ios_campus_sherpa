@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Campus Sherpa. All rights reserved.
 //
 
-#import "CSTourMedia.h"
+#import "CSImageMedia.h"
 
-@implementation CSTourMedia
+@implementation CSImageMedia
 - (instancetype) initWithName:(NSString *)name description:(NSString *)description imageParseFile:(PFFile *)imageParseFile{
     self = [super init];
     
