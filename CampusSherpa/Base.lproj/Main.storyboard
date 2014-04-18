@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="k1d-Ml-X9U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Mzh-3r-8wM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -519,6 +519,37 @@
                                             <segue destination="9g0-v8-wcA" kind="push" id="isf-8T-W8F"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="HLH-j6-2wO" detailTextLabel="cbc-Ye-cgN" imageView="Hc2-rW-0ri" style="IBUITableViewCellStyleSubtitle" id="of0-Dh-MQt">
+                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="of0-Dh-MQt" id="E2E-91-CEx">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Audio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HLH-j6-2wO">
+                                                    <rect key="frame" x="73" y="3" width="47" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Record a narration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cbc-Ye-cgN">
+                                                    <rect key="frame" x="73" y="25" width="104" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="MusicIcon" id="Hc2-rW-0ri">
+                                                    <rect key="frame" x="15" y="0.0" width="43" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Mzh-3r-8wM" kind="push" id="hnj-Eg-RD8"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -539,6 +570,49 @@
                 <exit id="KP2-C1-R5o" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2439" y="-427"/>
+        </scene>
+        <!--Record Audio Controller - Record Audio-->
+        <scene sceneID="02W-R4-W8w">
+            <objects>
+                <viewController id="Mzh-3r-8wM" customClass="CSRecordAudioController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lcM-Om-Z7C"/>
+                        <viewControllerLayoutGuide type="bottom" id="qsG-GL-UXo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rsZ-T1-kWo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urM-1U-cT0">
+                                <rect key="frame" x="57" y="357" width="207" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="microphone_button_unpressed">
+                                    <color key="titleShadowColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" image="microphone_button_pressed"/>
+                                <connections>
+                                    <action selector="onRecordButtonClick:" destination="Mzh-3r-8wM" eventType="touchUpInside" id="OSk-75-3Vv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wn-hh-m9P">
+                                <rect key="frame" x="15" y="132" width="291" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Record Audio" id="cPQ-6k-kH0"/>
+                    <connections>
+                        <outlet property="btnRecord" destination="urM-1U-cT0" id="43u-5e-LnO"/>
+                        <outlet property="lblElapsedTime" destination="7wn-hh-m9P" id="REh-Bm-7IV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpw-Zw-6J3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2969" y="-130"/>
         </scene>
         <!--Upload Image Controller - Upload Picture-->
         <scene sceneID="Qpo-fu-iyK">
@@ -615,7 +689,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFn-Sk-gr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qdQ-Dn-zvZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2859" y="-427"/>
+            <point key="canvasLocation" x="2975" y="-911"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ePf-Z4-crG">
@@ -739,7 +813,10 @@
     </scenes>
     <resources>
         <image name="CameraImage" width="250" height="250"/>
+        <image name="MusicIcon" width="250" height="250"/>
         <image name="PinImage" width="250" height="250"/>
+        <image name="microphone_button_pressed" width="512" height="512"/>
+        <image name="microphone_button_unpressed" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
