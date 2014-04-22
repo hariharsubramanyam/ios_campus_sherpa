@@ -4,9 +4,11 @@
 #import "CSAppDelegate.h"
 #import "CSTour.h"
 #import "CSTourLocation.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CSStartTourViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;    // Map view
+@property (weak, nonatomic) IBOutlet UIButton *btnStartTour;
 @property (strong, nonatomic) CSAppDelegate *appDelegate;   // App delegate
 @end
 
@@ -32,6 +34,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Set button border
+    self.btnStartTour.layer.borderWidth = 1.0f;
+    self.btnStartTour.layer.cornerRadius = 15;
+    self.btnStartTour.layer.borderColor=[[UIColor blueColor] CGColor];
     
     // Get app delegate
     self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication] delegate]);

@@ -52,7 +52,7 @@
                     <navigationItem key="navigationItem" title="Tours" id="wZQ-cc-hkh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JnB-J0-qEk">
                             <connections>
-                                <segue destination="tAe-GA-ZRF" kind="push" id="Akf-Fz-nnC"/>
+                                <segue destination="tAe-GA-ZRF" kind="push" identifier="NEW_TOUR" id="YZN-9z-hbH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -144,7 +144,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDw-Ky-Ef7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="GJu-U5-uPO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="748" y="-287"/>
+            <point key="canvasLocation" x="804" y="-423"/>
         </scene>
         <!--New Tour Locations Controller - Locations-->
         <scene sceneID="bMw-uo-Pjg">
@@ -209,7 +209,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0a-0D-ZB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gHh-4V-Bao" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1187" y="-287"/>
+            <point key="canvasLocation" x="1243" y="-423"/>
         </scene>
         <!--Start Tour View Controller - Tour-->
         <scene sceneID="uXZ-BB-r9W">
@@ -244,6 +244,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tour" id="Ih6-JE-ONb"/>
                     <connections>
+                        <outlet property="btnStartTour" destination="vTo-CA-6GL" id="Wwk-bX-6qN"/>
                         <outlet property="mapView" destination="aKy-za-dFG" id="NFs-UJ-P9M"/>
                     </connections>
                 </viewController>
@@ -476,7 +477,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRW-oc-ClQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hhs-YL-qyP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="-287"/>
+            <point key="canvasLocation" x="1642" y="-423"/>
         </scene>
         <!--Add Media Controller - Add Media-->
         <scene sceneID="gbJ-Yd-0ug">
@@ -570,7 +571,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgT-Um-wmV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KP2-C1-R5o" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2019" y="-287"/>
+            <point key="canvasLocation" x="2075" y="-423"/>
         </scene>
         <!--Record Audio Controller - Record Audio-->
         <scene sceneID="02W-R4-W8w">
@@ -613,7 +614,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpw-Zw-6J3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2549" y="10"/>
+            <point key="canvasLocation" x="2605" y="-126"/>
         </scene>
         <!--Upload Image Controller - Upload Picture-->
         <scene sceneID="Qpo-fu-iyK">
@@ -690,7 +691,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFn-Sk-gr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qdQ-Dn-zvZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2555" y="-771"/>
+            <point key="canvasLocation" x="2611" y="-907"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ePf-Z4-crG">
