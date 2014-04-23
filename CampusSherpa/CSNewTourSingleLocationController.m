@@ -3,6 +3,7 @@
 #import "CSTourMedia.h"
 #import "CSAppDelegate.h"
 #import <MapKit/MapKit.h>
+#import "CSRecordAudioController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface CSNewTourSingleLocationController ()
@@ -78,8 +79,18 @@
     if ([[segue sourceViewController] class] == [CSUploadImageController class]) {
         CSUploadImageController *imgCtrl = [segue sourceViewController];
         if (imgCtrl.image != nil) {
-            CSTourMedia *createdMedia = [[CSTourMedia alloc] initWithName:imgCtrl.titleStr description:imgCtrl.descStr imageParseFile:nil];
-            createdMedia.image = imgCtrl.image;
+            CSTourMedia *createdMedia = [[CSTourMedia alloc] initWithName:imgCtrl.titleStr description:imgCtrl.descStr parseFile:nil];
+            createdMedia.mediaData = imgCtrl.image;
+            createdMedia.isImage = YES;
+            [self.appDelegate.locationToEdit.media addObject:createdMedia];
+            [self.mediaTable reloadData];
+        }
+    }else if([[segue sourceViewController] class] == [CSRecordAudioController class]){
+        CSRecordAudioController *sourceController = [segue sourceViewController];
+        if (sourceController.audioData != nil) {
+            CSTourMedia *createdMedia = [[CSTourMedia alloc] initWithName:sourceController.audioTitle description:sourceController.audioDescription parseFile:nil];
+            createdMedia.mediaData = sourceController.audioData;
+            createdMedia.isImage = NO;
             [self.appDelegate.locationToEdit.media addObject:createdMedia];
             [self.mediaTable reloadData];
         }

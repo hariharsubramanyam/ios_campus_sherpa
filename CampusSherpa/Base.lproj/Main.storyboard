@@ -610,9 +610,11 @@
                     <connections>
                         <outlet property="btnRecord" destination="urM-1U-cT0" id="43u-5e-LnO"/>
                         <outlet property="lblElapsedTime" destination="7wn-hh-m9P" id="REh-Bm-7IV"/>
+                        <segue destination="CWT-ep-1hw" kind="unwind" identifier="Unwind_From_Add_Media" unwindAction="unwindFromAddMedia:" id="5Dk-Wr-i31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpw-Zw-6J3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CWT-ep-1hw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2605" y="-126"/>
         </scene>
@@ -743,7 +745,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x7L-hr-Cqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2006" y="596"/>
+            <point key="canvasLocation" x="2145" y="374"/>
+        </scene>
+        <!--Audio Media Detail View Controller-->
+        <scene sceneID="F1W-f0-hmN">
+            <objects>
+                <viewController id="riK-ff-B0r" customClass="CSAudioMediaDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IPX-oP-VUJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hdb-d3-nsz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jpI-zZ-OJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUu-Uv-7bt">
+                                <rect key="frame" x="57" y="357" width="207" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="play_unpressed">
+                                    <color key="titleShadowColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" image="play_pressed"/>
+                                <connections>
+                                    <action selector="onPlayButtonClick:" destination="riK-ff-B0r" eventType="touchUpInside" id="kV5-fB-Nm7"/>
+                                    <action selector="onRecordButtonClick:" destination="Mzh-3r-8wM" eventType="touchUpInside" id="q6p-EY-Grr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVL-zL-fKC">
+                                <rect key="frame" x="15" y="132" width="291" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XGc-Nb-NB1"/>
+                    <connections>
+                        <outlet property="btnPlay" destination="AUu-Uv-7bt" id="p7G-px-bAU"/>
+                        <outlet property="lblTime" destination="mVL-zL-fKC" id="Pld-Wb-i3J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6E-kx-sls" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2145" y="1102"/>
         </scene>
         <!--Tour Media List View Controller - Media-->
         <scene sceneID="fK7-Xa-VyX">
@@ -777,9 +823,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="8fW-Zu-oMC" kind="push" id="N1V-LG-D1p"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -789,6 +832,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Media" id="8s9-iU-w6C"/>
+                    <connections>
+                        <segue destination="8fW-Zu-oMC" kind="push" identifier="IMAGE_MEDIA" id="Rxo-xf-MPQ"/>
+                        <segue destination="riK-ff-B0r" kind="push" identifier="AUDIO_MEDIA" id="ogV-8G-VpT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Req-jD-yqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -801,6 +848,8 @@
         <image name="PinImage" width="250" height="250"/>
         <image name="microphone_button_pressed" width="512" height="512"/>
         <image name="microphone_button_unpressed" width="512" height="512"/>
+        <image name="play_pressed" width="512" height="512"/>
+        <image name="play_unpressed" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

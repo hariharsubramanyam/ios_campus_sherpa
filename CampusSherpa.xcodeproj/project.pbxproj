@@ -28,6 +28,7 @@
 		736D48B218EB828000DA9E56 /* CSTourMediaListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736D48B118EB828000DA9E56 /* CSTourMediaListViewController.m */; };
 		736D48B518EB8AF200DA9E56 /* CSTourMediaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736D48B418EB8AF200DA9E56 /* CSTourMediaDetailViewController.m */; };
 		7371C04918E8FE5700A9BD84 /* CSTourLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7371C04818E8FE5700A9BD84 /* CSTourLocationViewController.m */; };
+		738592C5190755D700B9A8F3 /* CSAudioMediaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 738592C4190755D700B9A8F3 /* CSAudioMediaDetailViewController.m */; };
 		73878CF91900A69900F42C0F /* CSRecordAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73878CF81900A69900F42C0F /* CSRecordAudioController.m */; };
 		73878CFB1900B81700F42C0F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73878CFA1900B81700F42C0F /* AVFoundation.framework */; };
 		73F5197018E30DB8003A947B /* CSAvailableToursController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5196F18E30DB8003A947B /* CSAvailableToursController.m */; };
@@ -92,6 +93,8 @@
 		736D48B418EB8AF200DA9E56 /* CSTourMediaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTourMediaDetailViewController.m; sourceTree = "<group>"; };
 		7371C04718E8FE5700A9BD84 /* CSTourLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTourLocationViewController.h; sourceTree = "<group>"; };
 		7371C04818E8FE5700A9BD84 /* CSTourLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTourLocationViewController.m; sourceTree = "<group>"; };
+		738592C3190755D700B9A8F3 /* CSAudioMediaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAudioMediaDetailViewController.h; sourceTree = "<group>"; };
+		738592C4190755D700B9A8F3 /* CSAudioMediaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAudioMediaDetailViewController.m; sourceTree = "<group>"; };
 		73878CF71900A69900F42C0F /* CSRecordAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordAudioController.h; sourceTree = "<group>"; };
 		73878CF81900A69900F42C0F /* CSRecordAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordAudioController.m; sourceTree = "<group>"; };
 		73878CFA1900B81700F42C0F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -282,6 +285,8 @@
 				8A3011E118F0D22300939E4E /* CSUploadImageController.m */,
 				73878CF71900A69900F42C0F /* CSRecordAudioController.h */,
 				73878CF81900A69900F42C0F /* CSRecordAudioController.m */,
+				738592C3190755D700B9A8F3 /* CSAudioMediaDetailViewController.h */,
+				738592C4190755D700B9A8F3 /* CSAudioMediaDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F5197018E30DB8003A947B /* CSAvailableToursController.m in Sources */,
+				738592C5190755D700B9A8F3 /* CSAudioMediaDetailViewController.m in Sources */,
 				7371C04918E8FE5700A9BD84 /* CSTourLocationViewController.m in Sources */,
 				8A3011D918EFA46400939E4E /* CSNewTourLocationsController.m in Sources */,
 				8A7E612D18EF9BF900CA3A66 /* CSNewTourDescriptionController.m in Sources */,

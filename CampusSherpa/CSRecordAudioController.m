@@ -30,6 +30,7 @@
     }else{               // if recording
         self.recording = NO;
         [self.timer invalidate];
+        self.lblElapsedTime.text = @"";
         [self stopRecordingOnAudioRecorder:self.audioRecorder];
     }
 }
@@ -207,6 +208,9 @@
     if (buttonIndex == 1) {
         UITextField *textField = [alertView textFieldAtIndex:0];
         NSLog(@"Saving audio named %@", textField.text);
+        self.audioTitle = textField.text;
+        self.audioDescription = @"Narration";
+        [self performSegueWithIdentifier:@"Unwind_From_Add_Media" sender:self];
     }else{
         NSLog(@"Not saving audio");
         self.audioData = nil;

@@ -1,6 +1,8 @@
 #import "CSTourMediaListViewController.h"
 #import "CSAppDelegate.h"
 #import "CSTourMedia.h"
+#import "CSTourMediaDetailViewController.h"
+#import "CSAudioMediaDetailViewController.h"
 #import <Parse/Parse.h>
 
 @interface CSTourMediaListViewController ()
@@ -65,25 +67,35 @@
     cell.textLabel.text = tourMedia.name;
     cell.detailTextLabel.text = tourMedia.description;
 
-    
-    if (!cell.imageView.image) {
-        PFFile *imageFile = tourMedia.imageParseFile;
-        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            if (!error) {
+    if (tourMedia.isImage) {
+        if (!cell.imageView.image) {
+            PFFile *imageFile = tourMedia.parseFile;
+            [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if (!error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        UIImage *image = [[UIImage alloc] initWithData:data];
+                        CGSize itemSize = CGSizeMake(60, 40);
+                        UIGraphicsBeginImageContext(itemSize);
+                        CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+                        [image drawInRect:imageRect];
+                        cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+                        UIGraphicsEndImageContext();
+                        ((CSTourMedia *)self.appDelegate.selectedTourLocation.media[indexPath.row]).mediaData = data;
+                        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                    });
+                }
+            }];
+            
+        }
+    }else{
+        PFFile *audioFile = tourMedia.parseFile;
+        [audioFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if(!error){
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    UIImage *image = [[UIImage alloc] initWithData:data];
-                    CGSize itemSize = CGSizeMake(60, 40);
-                    UIGraphicsBeginImageContext(itemSize);
-                    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-                    [image drawInRect:imageRect];
-                    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-                    UIGraphicsEndImageContext();
-                    ((CSTourMedia *)self.appDelegate.selectedTourLocation.media[indexPath.row]).image = data;
-                    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                    ((CSTourMedia *)self.appDelegate.selectedTourLocation.media[indexPath.row]).mediaData = data;
                 });
             }
         }];
-
     }
 
     return cell;
@@ -93,6 +105,11 @@
     self.appDelegate.selectedMedia = self.appDelegate.selectedTourLocation.media[indexPath.row];
     NSString *logMessage = [NSString stringWithFormat:@"Clicked on media item - %@", self.appDelegate.selectedMedia.name];
     [self.appDelegate logMessageToParse:logMessage];
+    if (self.appDelegate.selectedMedia.isImage) {
+        [self performSegueWithIdentifier:@"IMAGE_MEDIA" sender:self];
+    }else{
+        [self performSegueWithIdentifier:@"AUDIO_MEDIA" sender:self];
+    }
 }
 
 

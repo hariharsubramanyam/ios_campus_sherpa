@@ -118,11 +118,20 @@
                     
                     // Add the ID to the list
                     [self.appDelegate.selectedTourLocation.mediaIDs addObject:object.objectId];
+                
                     
-                    // Create the media if it's an image
-                    CSTourMedia *tourMedia = [[CSTourMedia alloc] initWithName:object[@"name"]
-                                                                     description:object[@"description"]
-                                                                  imageParseFile:object[@"image"]];
+                    CSTourMedia *tourMedia;
+                    if (object[@"image"] == nil) {
+                        tourMedia = [[CSTourMedia alloc] initWithName:object[@"name"]
+                                                          description:object[@"description"]
+                                                            parseFile:object[@"audio"]];
+                        tourMedia.isImage = NO;
+                    }else{
+                        tourMedia = [[CSTourMedia alloc] initWithName:object[@"name"]
+                                                          description:object[@"description"]
+                                                            parseFile:object[@"image"]];
+                        tourMedia.isImage = YES;
+                    }
                     
                     // Add the media to the list
                     [self.appDelegate.selectedTourLocation.media addObject:tourMedia];
@@ -144,7 +153,7 @@
     // List index of location on the tour
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
         if (self.appDelegate.selectedTourLocation == self.appDelegate.selectedTour.tourLocations[i]) {
-            self.title = [NSString stringWithFormat:@"Location %d of %d", (i+1), [self.appDelegate.selectedTour.tourLocations count]];
+            self.title = [NSString stringWithFormat:@"Location %d of %lu", (i+1), (unsigned long)[self.appDelegate.selectedTour.tourLocations count]];
             break;
         }
     }

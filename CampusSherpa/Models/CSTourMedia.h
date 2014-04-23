@@ -4,10 +4,11 @@
 @interface CSTourMedia : NSObject
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *description;
-@property (strong, nonatomic) PFFile *imageParseFile;
-@property (strong, nonatomic) NSData *image;
+@property (strong, nonatomic) PFFile *parseFile;
+@property (strong, nonatomic) NSData *mediaData;
+@property (nonatomic) BOOL isImage;
 
-- (instancetype) initWithName:(NSString *)name description:(NSString *)description imageParseFile:(PFFile *)imageParseFile;
+- (instancetype) initWithName:(NSString *)name description:(NSString *)description parseFile:(PFFile *)imageParseFile;
 
 - (NSString *) saveToParse;
 @end

@@ -25,7 +25,7 @@
     self.appDelegate = (CSAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.title = self.appDelegate.selectedMedia.name;
     self.txtDescription.text = self.appDelegate.selectedMedia.description;
-    self.imgMedia.image = [UIImage imageWithData:self.appDelegate.selectedMedia.image];
+    self.imgMedia.image = [UIImage imageWithData:self.appDelegate.selectedMedia.mediaData];
 }
 
 - (void)didReceiveMemoryWarning

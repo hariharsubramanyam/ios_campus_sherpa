@@ -7,6 +7,8 @@
 @property (strong, nonatomic) NSURL *soundFileURL;
 
 @property (strong, nonatomic) NSData *audioData;
+@property (strong, nonatomic) NSString *audioTitle;
+@property (strong, nonatomic) NSString *audioDescription;
 
 @property (nonatomic) BOOL recording;
 

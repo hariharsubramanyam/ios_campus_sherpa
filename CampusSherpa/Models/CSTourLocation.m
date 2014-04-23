@@ -32,7 +32,7 @@
     PFObject *location = [PFObject objectWithClassName:@"TourLocation"];
     if ([self.media count] > 0) {
         CSTourMedia *media = self.media[0];
-        self.thumbnailParseFile = media.imageParseFile;
+        self.thumbnailParseFile = media.parseFile;
         location[@"thumbnail"] = self.thumbnailParseFile;
     }
     location[@"name"] = self.name;
