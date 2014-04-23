@@ -35,11 +35,6 @@
 {
     [super viewDidLoad];
     
-    // Set button border
-    self.btnStartTour.layer.borderWidth = 1.0f;
-    self.btnStartTour.layer.cornerRadius = 15;
-    self.btnStartTour.layer.borderColor=[[UIColor blueColor] CGColor];
-    
     // Get app delegate
     self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication] delegate]);
     

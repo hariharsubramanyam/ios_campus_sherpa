@@ -16,6 +16,10 @@
 
 @implementation CSTourLocationViewController
 
+- (IBAction)onShowMapClick:(id)sender {
+    
+}
+
 
 /* Previous location button click */
 - (IBAction)onPreviousLocationClick:(id)sender {
