@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface CSTourLocationViewController : UIViewController
+@interface CSTourLocationViewController : UIViewController<UIGestureRecognizerDelegate>
 
 @end

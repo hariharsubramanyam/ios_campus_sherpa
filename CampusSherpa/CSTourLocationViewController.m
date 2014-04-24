@@ -23,7 +23,10 @@
 
 /* Previous location button click */
 - (IBAction)onPreviousLocationClick:(id)sender {
-    
+    [self loadPreviousLocation];
+}
+
+- (void) loadPreviousLocation{
     // Iterate through all the locations
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
         
@@ -51,9 +54,7 @@
     }
 }
 
-/* Next location button click */
-- (IBAction)onNextLocationClick:(id)sender {
-
+- (void) loadNextLocation{
     // Iterate through all the locations
     for (int i = 0; i < [self.appDelegate.selectedTour.tourLocations count]; i++) {
         
@@ -74,11 +75,16 @@
             // Update the UI and query for the locations
             [self updateUI];
             [self makeQuery];
-
+            
             // When we've updated the UI, quit the loop
             return;
         }
     }
+}
+
+/* Next location button click */
+- (IBAction)onNextLocationClick:(id)sender {
+    [self loadNextLocation];
 }
 
 
@@ -96,11 +102,26 @@
     self.appDelegate = ((CSAppDelegate *)[[UIApplication sharedApplication]delegate]);
 
     [super viewDidLoad];
-    
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]
+                                   initWithTarget:self
+                                       action:@selector(swiped:)];
+    [swipe setDirection:(UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight)];
+    [self.view addGestureRecognizer:swipe];
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
     // Do any additional setup after loading the view.
     [self updateUI];
     [self makeQuery];
     
+}
+
+- (void)swiped:(UISwipeGestureRecognizer *)recognizer {
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
+        [self loadNextLocation];
+    }else{
+        [self loadPreviousLocation];
+    }
 }
 
 /* Retrieve the Tour media */
