@@ -3,10 +3,10 @@
 
 @interface CSUploadImageController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @property (weak, nonatomic) IBOutlet UITextField *imageTitle;
 @property (weak, nonatomic) IBOutlet UITextView *imageDesc;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (strong, nonatomic) CSAppDelegate *appDelegate;
 @end
 
@@ -81,20 +81,22 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (IBAction)onCancelClick:(id)sender {
+    self.image = nil;
+    [self.appDelegate logMessageToParse:@"Cancelled out of add image view"];
+    [self performSegueWithIdentifier:@"CANCEL_MEDIA" sender:self];
+}
+- (IBAction)onDoneClick:(id)sender {
+    [self.appDelegate logMessageToParse:@"Finished adding image"];
+    self.titleStr = self.imageTitle.text;
+    self.descStr = self.imageDesc.text;
+    [self performSegueWithIdentifier:@"ADDED_MEDIA" sender:self];
+}
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if (sender == self.cancelButton) {
-        self.image = nil;
-        [self.appDelegate logMessageToParse:@"Cancelled out of add image view"];
-    } else {
-        [self.appDelegate logMessageToParse:@"Finished adding image"];
-        self.titleStr = self.imageTitle.text;
-        self.descStr = self.imageDesc.text;
-    }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 }
 
 @end

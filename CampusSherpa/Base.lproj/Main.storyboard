@@ -529,7 +529,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="9g0-v8-wcA" kind="push" id="isf-8T-W8F"/>
+                                            <segue destination="9g0-v8-wcA" kind="modal" id="P4a-ea-Jvh"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="HLH-j6-2wO" detailTextLabel="cbc-Ye-cgN" imageView="Hc2-rW-0ri" style="IBUITableViewCellStyleSubtitle" id="of0-Dh-MQt">
@@ -652,18 +652,18 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NgV-bi-ndY">
-                                <rect key="frame" x="0.0" y="64" width="320" height="250"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="250"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Your description of the photo." translatesAutoresizingMaskIntoConstraints="NO" id="67i-LY-r5P">
-                                <rect key="frame" x="20" y="428" width="280" height="128"/>
+                                <rect key="frame" x="20" y="354" width="280" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMx-wO-r2S">
-                                <rect key="frame" x="20" y="337" width="140" height="30"/>
+                                <rect key="frame" x="20" y="278" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose from Library">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -673,7 +673,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUX-ZE-YDB">
-                                <rect key="frame" x="216" y="337" width="84" height="30"/>
+                                <rect key="frame" x="216" y="278" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take Picture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -683,11 +683,31 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="690-SY-RAa">
-                                <rect key="frame" x="20" y="391" width="280" height="30"/>
+                                <rect key="frame" x="20" y="316" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ed3-9q-ZvI">
+                                <rect key="frame" x="20" y="518" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCancelClick:" destination="9g0-v8-wcA" eventType="touchUpInside" id="aod-af-pF9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGj-Q4-xA8">
+                                <rect key="frame" x="263" y="518" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDoneClick:" destination="9g0-v8-wcA" eventType="touchUpInside" id="LFL-oQ-3rr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -704,11 +724,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="yU3-tu-dB8" id="jS2-ap-Dx1"/>
-                        <outlet property="doneButton" destination="AJd-Be-jrH" id="bfy-NX-GbA"/>
+                        <outlet property="cancelButton" destination="ed3-9q-ZvI" id="leM-BY-wQz"/>
+                        <outlet property="doneButton" destination="CGj-Q4-xA8" id="FCX-ty-RVD"/>
                         <outlet property="imageDesc" destination="67i-LY-r5P" id="tBg-Fl-tSW"/>
                         <outlet property="imageTitle" destination="690-SY-RAa" id="sgL-uO-KA7"/>
                         <outlet property="imageView" destination="NgV-bi-ndY" id="JQ6-uy-wCF"/>
+                        <segue destination="qdQ-Dn-zvZ" kind="unwind" identifier="ADDED_MEDIA" unwindAction="unwindFromAddMedia:" id="Yqc-A3-x8Z"/>
+                        <segue destination="qdQ-Dn-zvZ" kind="unwind" identifier="CANCEL_MEDIA" unwindAction="unwindFromMediaCancel:" id="pMp-yS-n8X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFn-Sk-gr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
