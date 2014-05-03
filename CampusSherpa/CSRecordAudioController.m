@@ -203,6 +203,9 @@
     textField.keyboardType = UIKeyboardTypeAlphabet;
     return alertView;
 }
+- (IBAction)onCancelClick:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
