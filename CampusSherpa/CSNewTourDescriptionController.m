@@ -2,8 +2,6 @@
 #import "CSAppDelegate.h"
 
 @interface CSNewTourDescriptionController ()
-@property (weak, nonatomic) IBOutlet UITextField *tourName;
-@property (weak, nonatomic) IBOutlet UITextView *description;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @property (strong, nonatomic) CSAppDelegate *appDelegate;
@@ -24,18 +22,8 @@
 {
     [super viewDidLoad];
     self.appDelegate = (CSAppDelegate *)[[UIApplication sharedApplication] delegate];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    
-    [self.view addGestureRecognizer:tap];
-    // Do any additional setup after loading the view.
 }
 
--(void)dismissKeyboard {
-    [self.description resignFirstResponder];
-    [self.tourName resignFirstResponder];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,8 +37,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if (sender == self.doneButton) {
-        self.appDelegate.createdTour.name = self.tourName.text;
-        self.appDelegate.createdTour.description = self.description.text;
         NSString *logMessage = [NSString stringWithFormat:@"Created tour - %@", self.appDelegate.createdTour.name];
         [self.appDelegate logMessageToParse:logMessage];
     } else if (sender == self.cancelButton) {
